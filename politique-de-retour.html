@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '2234756943801930');fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2234756943801930&ev=PageView&noscript=1"/></noscript>
 <style>
 :root{--cream:#FCF8F5;--paper:#FFFFFF;--ink:#2A2220;--ink-soft:#6E615C;--muted:#A89C96;--line:#F0E6DF;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;--display:'Fraunces',Georgia,serif;--body:'DM Sans',system-ui,sans-serif;--max:900px;--radius:12px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
@@ -36,6 +40,9 @@ a.link:hover{color:var(--ink);}
 .nav a{font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:24px;transition:color .3s;}
 .nav a:hover{color:var(--pink)}
 .footer{padding-block:32px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted);text-align:center;}
+.footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
+.footer__bottom a:hover {color: var(--pink);}
+.footer__bottom-links {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;gap: 12px;}
 </style>
 </head>
 <body>
@@ -61,7 +68,7 @@ a.link:hover{color:var(--ink);}
   <p>Nous voulons que vous soyez entièrement satisfait de votre bougie KLIMA. Si un produit ne vous convient pas, vous pouvez le retourner dans les conditions décrites ci-dessous, conformément à la <strong>loi n° 31-08</strong> relative à la protection du consommateur.</p>
 
   <h2 class="h-display h2">1. Délai de rétractation</h2>
-  <p>Vous disposez d'un délai de <strong>7 jours</strong> à compter de la réception de votre commande pour exercer votre droit de rétractation, sans avoir à justifier de motif ni à payer de pénalité.</p>
+  <p>Vous disposez d'un délai de <strong>7 jours</strong> à compter de la réception de votre commande pour exercer votre droit de rétractation, sans avoir à justifier de motif.</p>
 
   <h2 class="h-display h2">2. Conditions de retour</h2>
   <p>Pour être accepté, le produit retourné doit :</p>
@@ -70,7 +77,7 @@ a.link:hover{color:var(--ink);}
     <li>Être retourné dans son emballage d'origine (boîte, ruban, étiquette).</li>
     <li>Être accompagné d'une preuve d'achat (confirmation de commande ou reçu).</li>
   </ul>
-  <p><strong>Exception :</strong> les bougies personnalisées avec un message écrit par le client ne sont pas éligibles au retour, car elles sont confectionnées selon vos spécifications.</p>
+  <p><strong>Exception :</strong> les bougies personnalisées avec un message écrit par le client ne sont pas éligibles au retour.</p>
 
   <h2 class="h-display h2">3. Procédure de retour</h2>
   <p>Pour retourner un produit :</p>
@@ -82,10 +89,10 @@ a.link:hover{color:var(--ink);}
   </ul>
 
   <h2 class="h-display h2">4. Remboursement</h2>
-  <p>Une fois le produit reçu et vérifié, nous procéderons au remboursement du montant total payé (hors frais de retour) dans un délai de <strong>15 jours</strong> suivant votre demande de rétractation. Le remboursement se fera par le même moyen de paiement que celui utilisé lors de l'achat (virement bancaire ou espèces, selon le mode de paiement initial).</p>
+  <p>Une fois le produit reçu et vérifié, nous procéderons au remboursement du montant total payé (hors frais de retour) dans un délai de <strong>15 jours</strong> suivant votre demande de rétractation.</p>
 
   <h2 class="h-display h2">5. Produit défectueux ou endommagé</h2>
-  <p>Si votre produit arrive endommagé ou présente un défaut, contactez-nous immédiatement avec une photo. Nous vous enverrons une nouvelle bougie sans frais, ou nous vous rembourserons intégralement, selon votre préférence. Cette garantie s'applique indépendamment du droit de rétractation.</p>
+  <p>Si votre produit arrive endommagé ou présente un défaut, contactez-nous immédiatement avec une photo. Nous vous enverrons une nouvelle bougie sans frais, ou nous vous rembourserons intégralement, selon votre préférence.</p>
 
   <h2 class="h-display h2">6. Contact</h2>
   <p>Pour toute question relative à un retour ou un remboursement :</p>
@@ -94,13 +101,15 @@ a.link:hover{color:var(--ink);}
     <li><strong>Téléphone :</strong> 06 88 40 00 44</li>
     <li><strong>WhatsApp :</strong> 06 88 40 00 88</li>
   </ul>
-
-  <p style="margin-top:40px;font-size:.85rem;color:var(--muted);">Dernière mise à jour : Novembre 2026.</p>
 </main>
 
 <footer class="footer container">
-  © 2026 KLIMA. Tous droits réservés. Coulée à la main au Maroc.
+  <div class="footer__bottom-links">
+    <span>© 2026 KLIMA. Tous droits réservés.</span>
+    <a href="politique-de-confidentialite.html">Confidentialité</a>
+    <a href="conditions-generales.html">CGV</a>
+    <a href="politique-de-retour.html">Retours</a>
+  </div>
 </footer>
-
 </body>
 </html>
