@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Merci — KLIMA</title>
+<meta name="description" content="Merci pour votre commande. Votre bougie KLIMA est en cours de préparation." />
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2234756943801930');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2234756943801930&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+/* ============================================================
+   KLIMA — THANK YOU PAGE
+   ============================================================ */
+:root{
+  --cream:#FCF8F5;
+  --paper:#FFFFFF;
+  --ink:#2A2220;
+  --ink-soft:#6E615C;
+  --muted:#A89C96;
+  --line:#F0E6DF;
+  --line-soft:#F7EFE9;
+
+  --pink:#FC6E8E;
+  --pink-light:#FFD1DC;
+  --pink-dark:#D94E6A;
+
+  --display:'Fraunces', Georgia, serif;
+  --body:'DM Sans', system-ui, sans-serif;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --max:800px;
+  --radius:12px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:16px;
+  font-weight:400;
+  -webkit-font-smoothing: subpixel-antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--pink);color:#fff}
+
+/* BASE */
+.container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
+.h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;}
+.h2{font-size:clamp(1.6rem,4vw,2.2rem);}
+.h-display em{font-style:italic;font-weight:400;color:var(--pink)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:500;font-size:.86rem;letter-spacing:.02em;transition:background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);white-space:nowrap;}
+.btn:hover{background:var(--pink);color:#fff;}
+.btn--large{padding:18px 40px;font-size:.95rem;}
+
+/* HEADER (Simplified for checkout flow) */
+.header{padding-block:24px;text-align:center;border-bottom:1px solid var(--line);}
+.logo img{height:32px;margin-inline:auto;}
+
+/* MAIN */
+.main{padding-block:clamp(48px,8vw,80px);min-height:70vh;display:flex;flex-direction:column;align-items:center;text-align:center;}
+
+.success-icon{
+  width:64px;height:64px;border-radius:50%;background:var(--pink-light);color:var(--pink-dark);
+  display:grid;place-items:center;margin-bottom:24px;animation:pop .5s var(--ease) forwards;
+}
+.success-icon svg{width:32px;height:32px;}
+@keyframes pop{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
+
+.main h1{margin-bottom:16px;}
+.main p.lead{color:var(--ink-soft);font-size:1.1rem;max-width:48ch;margin-inline:auto;margin-bottom:40px;}
+
+/* RECEIPT BOX */
+.receipt{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;width:100%;text-align:left;box-shadow:0 10px 30px -10px rgba(42,34,32,.05);
+  margin-bottom:48px;
+}
+.receipt h3{font-family:var(--display);font-weight:400;font-size:1.2rem;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:12px;}
+.receipt-row{display:flex;justify-content:space-between;margin-bottom:12px;font-size:.9rem;}
+.receipt-row span:first-child{color:var(--ink-soft);}
+.receipt-row span:last-child{font-weight:500;text-align:right;max-width:60%;}
+.receipt-divider{height:1px;background:var(--line);margin:16px 0;}
+.receipt-total{display:flex;justify-content:space-between;font-size:1.1rem;font-weight:600;color:var(--ink);}
+.gift-note{background:var(--pink-light);color:var(--pink-dark);padding:12px 16px;border-radius:8px;font-size:.82rem;margin-top:16px;display:none;align-items:center;gap:8px;}
+.gift-note.is-visible{display:flex;}
+
+/* WHAT HAPPENS NEXT */
+.next-steps{width:100%;text-align:left;margin-bottom:48px;}
+.next-steps h3{font-family:var(--display);font-weight:400;font-size:1.4rem;text-align:center;margin-bottom:32px;}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:600px){.steps-grid{grid-template-columns:1fr;gap:24px;}}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--cream);border:1px solid var(--line);display:grid;place-items:center;font-size:.8rem;font-weight:600;margin:0 auto 12px;color:var(--ink-soft);}
+.step h4{font-family:var(--display);font-size:1.05rem;margin-bottom:6px;font-weight:400;}
+.step p{font-size:.8rem;color:var(--ink-soft);line-height:1.5;}
+
+/* INSTAGRAM CTA */
+.instagram-cta{
+  background:var(--pink);color:#fff;border-radius:var(--radius);padding:32px;width:100%;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.instagram-cta h3{font-family:var(--display);font-weight:400;font-size:1.3rem;}
+.instagram-cta p{font-size:.9rem;opacity:.9;max-width:40ch;margin-inline:auto;}
+.instagram-cta .btn{background:#fff;color:var(--pink);}
+.instagram-cta .btn:hover{background:var(--ink);color:#fff;}
+
+/* FOOTER */
+.footer{padding-block:32px;text-align:center;font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
+  </a>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="main container">
+  
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+  </div>
+
+  <h1 class="h-display h1">Merci.<br>Votre secret est entre nos mains.</h1>
+  
+  <p class="lead">
+    Nous avons bien reçu votre commande. Chaque bougie est coulée à la main. 
+    Nous vous contacterons très vite sur WhatsApp pour confirmer les détails.
+  </p>
+
+  <!-- RECEIPT -->
+  <div class="receipt" id="receipt" style="display:none;">
+    <h3>Récapitulatif de votre commande</h3>
+    
+    <div class="receipt-row">
+      <span>Produit</span>
+      <span id="rProduct">—</span>
+    </div>
+    <div class="receipt-row">
+      <span>Quantité</span>
+      <span id="rQty">—</span>
+    </div>
+    <div class="receipt-row">
+      <span>Livraison</span>
+      <span>Offerte</span>
+    </div>
+    
+    <div class="receipt-divider"></div>
+    
+    <div class="receipt-total">
+      <span>Total</span>
+      <span id="rTotal">—</span>
+    </div>
+
+    <div class="gift-note" id="giftNote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex:none;"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
+      <span><strong>Commande cadeau :</strong> Nous vous contacterons sur WhatsApp pour le paiement par virement. Le destinataire ne paiera rien à la livraison.</span>
+    </div>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="next-steps">
+    <h3>La suite des événements</h3>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Confirmation</h4>
+        <p>Nous vérifions votre message et vos coordonnées.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>La coulée</h4>
+        <p>Votre bougie est coulée à la main, avec soin.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>L'expédition</h4>
+        <p>Livraison offerte chez vous (ou chez la personne aimée) sous 3 à 5 jours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM CTA -->
+  <div class="instagram-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+    <h3>Partagez votre révélation</h3>
+    <p>Taguez <strong>@klimabougies</strong> sur Instagram quand vous allumerez votre bougie. Nous adorons voir vos réactions.</p>
+    <a href="https://instagram.com/klimabougies" target="_blank" rel="noopener" class="btn">Suivre KLIMA</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer container">
+  <span>© 2026 KLIMA. Tous droits réservés. Coulée à la main au Maroc.</span>
+</footer>
+
+<script>
+/* ============================================================
+   READ DATA FROM PREVIOUS PAGE & UPDATE UI
+   ============================================================ */
+const lastOrderStr = sessionStorage.getItem('lastOrder');
+
+if (lastOrderStr) {
+  try {
+    const order = JSON.parse(lastOrderStr);
+    
+    // Show receipt
+    document.getElementById('receipt').style.display = 'block';
+    
+    // Populate fields
+    document.getElementById('rProduct').textContent = order.productName;
+    document.getElementById('rQty').textContent = order.quantity;
+    document.getElementById('rTotal').textContent = order.totalPrice + ' DHS';
+    
+    // Check if it's a gift
+    if (order.isGift === 'true' || order.isGift === true) {
+      document.getElementById('giftNote').classList.add('is-visible');
+    }
+
+    // --- META PIXEL PURCHASE EVENT ---
+    // This tracks the exact revenue for your Facebook/Instagram ads
+    if (typeof fbq === 'function') {
+      fbq('track', 'Purchase', {
+        value: parseFloat(order.totalPrice),
+        currency: 'MAD',
+        content_name: order.productName,
+        contents: [{
+          id: order.productName.toLowerCase().replace(/\s+/g, '-'),
+          quantity: parseInt(order.quantity)
+        }],
+        content_type: 'product'
+      });
+      console.log('Meta Pixel Purchase event fired:', order.totalPrice, 'MAD');
+    }
+
+  } catch (e) {
+    console.error('Error parsing order data:', e);
+  }
+} else {
+  // If someone lands here directly without ordering, hide receipt and show generic message
+  console.log('No order data found in sessionStorage.');
+}
+</script>
+
+</body>
+</html>
