@@ -6,68 +6,40 @@
 <title>KLIMA — Détails du produit</title>
 <meta name="description" content="Découvrez nos bougies à message caché. Livraison offerte au Maroc." />
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
+<meta property="og:title" content="KLIMA — Une bougie avec un secret." />
+<meta property="og:description" content="Découvrez nos bougies à message caché." />
+<meta property="og:image" content="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg" />
+<meta property="og:type" content="product" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '2234756943801930');fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2234756943801930&ev=PageView&noscript=1"/></noscript>
 <style>
-/* ============================================================
-   KLIMA — PRODUCT PAGE
-   ============================================================ */
 :root{
-  --cream:#FCF8F5;
-  --paper:#FFFFFF;
-  --ink:#2A2220;
-  --ink-soft:#6E615C;
-  --muted:#A89C96;
-  --line:#F0E6DF;
-  --line-soft:#F7EFE9;
-
-  --pink:#FC6E8E;
-  --pink-light:#FFD1DC;
-  --pink-dark:#D94E6A;
-
-  --display:'Fraunces', Georgia, serif;
-  --body:'DM Sans', system-ui, sans-serif;
-
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --max:1200px;
-  --radius:12px;
+  --cream:#FCF8F5;--paper:#FFFFFF;--ink:#2A2220;--ink-soft:#6E615C;--muted:#A89C96;
+  --line:#F0E6DF;--line-soft:#F7EFE9;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;
+  --display:'Fraunces', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);--max:1200px;--radius:12px;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--body);
-  background:var(--cream);
-  color:var(--ink);
-  line-height:1.65;
-  font-size:16px;
-  font-weight:400; /* FIX: body text is now regular weight, not light */
-  -webkit-font-smoothing: subpixel-antialiased; /* FIX: prevents overly thin text on macOS */
-  overflow-x:hidden;
-}
+body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.65;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
 img,svg{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 input,select,textarea{font:inherit}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--pink);color:#fff}
 
-/* BASE */
 .container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
 @media(max-width:720px){.container{padding-inline:20px}}
 .section{padding-block:clamp(64px,10vw,100px)}
-
-.h-display{
-  font-family:var(--display);
-  font-weight:400; /* FIX: upgraded from 300 to 400 for presence */
-  letter-spacing:-.03em;
-  line-height:1.06;
-  font-variation-settings:"opsz" 96;
-}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
 .h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05}
 .h2{font-size:clamp(1.8rem,4vw,2.8rem)}
 .h-display em{font-style:italic;font-weight:400;color:var(--pink)}
-
 .eyebrow{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
 .lead{color:var(--ink-soft);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.75;font-weight:400;}
 
@@ -99,18 +71,38 @@ a{color:inherit;text-decoration:none}
 
 /* PRODUCT LAYOUT */
 .product-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start;padding-top:32px;}
-@media(max-width:900px){.product-layout{grid-template-columns:1fr;gap:32px;}}
+@media(max-width:900px){ .product-layout{grid-template-columns:1fr;gap:32px;} }
 
 /* Product Image */
-.product-image{border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1.1;background:var(--pink-light);position:sticky;top:100px;}  @media(max-width:900px){   .product-image{     position: relative;     top: auto;   } }
+.product-image{
+  border-radius:var(--radius);
+  overflow:hidden;
+  aspect-ratio:1/1.1;
+  background:var(--pink-light);
+  position:sticky;
+  top:100px;
+  width:100%;
+  max-width:600px;
+  margin-inline:auto;
+}
 .product-image img{width:100%;height:100%;object-fit:cover;}
+
+@media(max-width:900px){
+  .product-image{position:relative;top:auto;max-width:500px;}
+}
 
 /* Product Info */
 .product-info{display:flex;flex-direction:column;gap:20px;}
-.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:8px;}
+.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:8px;display:flex;gap:6px;}
 .breadcrumb a:hover{color:var(--pink);}
 .product-title{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;}
 .product-price{font-family:var(--display);font-size:1.4rem;color:var(--ink);font-weight:400;}
+
+@media(max-width:900px){
+  .product-info{text-align:center;align-items:center;}
+  .product-info .mechanism-box, .product-info .checkout-form, .product-info .trust-signals, .product-info .inline-faq {text-align:left;width:100%;}
+  .product-info .lead {margin-inline:auto;}
+}
 
 /* Mechanism Box */
 .mechanism-box{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:12px;margin-top:8px;}
@@ -150,6 +142,11 @@ a{color:inherit;text-decoration:none}
 .payment-note{font-size:.75rem;color:var(--ink-soft);text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;}
 .payment-note svg{width:14px;height:14px;color:var(--ink);}
 
+/* Custom Message Box */
+.custom-message-box{background:var(--pink-light);border:1px solid var(--pink);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:8px;}
+.custom-message-box span{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:8px;}
+.custom-message-box strong{font-family:var(--display);font-size:1.2rem;font-weight:500;color:var(--ink);word-break:break-word;}
+
 /* Trust Signals */
 .trust-signals{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
 .trust-item{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--ink-soft);}
@@ -179,22 +176,10 @@ a{color:inherit;text-decoration:none}
 .footer__social:hover{color:var(--pink)}
 .footer__social svg{width:16px;height:16px}
 .footer__bottom{padding-top:32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);}
-/* Add this to your existing CSS */
-.footer__bottom a {
-  color: var(--ink-soft);
-  text-decoration: underline;
-  margin-left: 12px;
-  transition: color .2s;
-}
-.footer__bottom a:hover {
-  color: var(--pink);
-}
-.footer__bottom-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-}
+.footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
+.footer__bottom a:hover {color: var(--pink);}
+.footer__bottom-links {display: flex;flex-wrap: wrap;align-items: center;gap: 12px;}
+
 /* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;z-index:95;transform:translate(-50%,150%);background:var(--ink);color:var(--cream);padding:12px 22px;border-radius:999px;font-size:.78rem;font-weight:500;transition:transform .4s var(--ease);white-space:nowrap;}
 .toast.is-on{transform:translate(-50%,0)}
@@ -202,7 +187,6 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="container header__inner">
     <a href="index.html" class="logo" aria-label="KLIMA accueil">
@@ -210,38 +194,27 @@ a{color:inherit;text-decoration:none}
     </a>
     <div class="header__actions">
       <a href="index.html" class="icon-btn" aria-label="Retour à la boutique" style="width:auto;padding-inline:12px;font-size:.85rem;font-weight:600;">Boutique</a>
-      <button class="icon-btn" id="cartBtn" aria-label="Ouvrir le panier">
-        <div class="cart-candle" id="cartCandle">
-          <div class="flame"></div>
-          <div class="wick"></div>
-          <div class="body"></div>
-        </div>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
     </div>
   </div>
 </header>
 
 <main class="container section" style="padding-top:100px;">
-
   <div class="product-layout">
-    
-    <!-- LEFT: IMAGE -->
     <div class="product-image">
       <img id="productImage" src="" alt="Bougie KLIMA" />
     </div>
-
-    <!-- RIGHT: INFO & FORM -->
     <div class="product-info">
-      
       <div class="breadcrumb">
         <a href="index.html">Boutique</a> &nbsp;›&nbsp; <span id="productBreadcrumb">Produit</span>
       </div>
-
       <h1 class="h-display product-title" id="productTitle">Chargement…</h1>
       <div class="product-price" id="productPrice">0 DHS</div>
-      
       <p class="lead" id="productDesc"></p>
+
+      <div class="custom-message-box" id="customMessageBox" style="display:none;">
+        <span>Votre message caché</span>
+        <strong id="customMessageText"></strong>
+      </div>
 
       <div class="mechanism-box">
         <h4>Comment ça marche ?</h4>
@@ -255,11 +228,8 @@ a{color:inherit;text-decoration:none}
         </p>
       </div>
 
-      <!-- EXPRESS CHECKOUT FORM -->
       <form class="checkout-form" id="orderForm" onsubmit="handleOrder(event)">
         <h3>Commander</h3>
-        
-        <!-- Self Order Fields -->
         <div class="form-group">
           <label for="name">Votre nom complet *</label>
           <input type="text" id="name" name="name" required placeholder="Ex: Sarah Bennani" />
@@ -279,13 +249,11 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <!-- Gift Toggle -->
         <div class="gift-toggle" onclick="toggleGift()">
           <input type="checkbox" id="isGift" name="isGift" onclick="event.stopPropagation(); toggleGift();" />
           <label for="isGift">C'est un cadeau ? (Expédier à quelqu'un d'autre)</label>
         </div>
 
-        <!-- Gift Recipient Fields -->
         <div class="gift-fields" id="giftFields">
           <div class="form-group">
             <label for="recipientName">Nom de la personne *</label>
@@ -305,7 +273,6 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <!-- Quantity & CTA -->
         <div class="action-row">
           <div class="qty-selector">
             <button type="button" onclick="updateQty(-1)">−</button>
@@ -317,14 +284,12 @@ a{color:inherit;text-decoration:none}
           </button>
         </div>
 
-        <!-- Payment Note -->
         <div class="payment-note" id="paymentNote">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
           Paiement à la livraison. Livraison offerte.
         </div>
       </form>
 
-      <!-- TRUST -->
       <div class="trust-signals">
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3z"/><path d="M16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>
@@ -336,7 +301,6 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
 
-      <!-- INLINE FAQ -->
       <div class="inline-faq">
         <h4>Questions fréquentes</h4>
         <details class="faq-item">
@@ -348,12 +312,10 @@ a{color:inherit;text-decoration:none}
           <p>Oui. Cochez la case "C'est un cadeau" dans le formulaire. Nous vous contacterons sur WhatsApp pour le paiement par virement (puisque le destinataire ne doit pas payer à la livraison).</p>
         </details>
       </div>
-
     </div>
   </div>
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
@@ -370,12 +332,13 @@ a{color:inherit;text-decoration:none}
         <ul>
           <li><a href="index.html#collection">Toutes les bougies</a></li>
           <li><a href="index.html#custom">Votre message</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h4>Aide</h4>
         <ul>
-          <li><a href="#">Livraison &amp; retours</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="mailto:contact@klimabougies.com">contact@klimabougies.com</a></li>
           <li><a href="tel:+212688400044">06 88 40 00 44</a></li>
         </ul>
@@ -383,13 +346,18 @@ a{color:inherit;text-decoration:none}
       <div>
         <h4>KLIMA</h4>
         <ul>
-          <li><a href="#">Notre histoire</a></li>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
           <li><a href="https://wa.me/212688400088" target="_blank" rel="noopener">WhatsApp</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2026 KLIMA. Tous droits réservés.</span>
+      <div class="footer__bottom-links">
+        <span>© 2026 KLIMA. Tous droits réservés.</span>
+        <a href="politique-de-confidentialite.html">Confidentialité</a>
+        <a href="conditions-generales.html">CGV</a>
+        <a href="politique-de-retour.html">Retours</a>
+      </div>
       <span>Coulée à la main au Maroc.</span>
     </div>
   </div>
@@ -398,9 +366,6 @@ a{color:inherit;text-decoration:none}
 <div class="toast" id="toast">Commande confirmée</div>
 
 <script>
-/* ============================================================
-   PRODUCT DATA MAP
-   ============================================================ */
 const PRODUCTS = {
   'votre-message': { name: 'Votre Message', price: 300, desc: 'Écrivez ce que vous voulez. Nous le cachons dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
   'you-are-my-soulmate': { name: 'You Are My Soulmate', price: 250, desc: 'Un mot d\'amour, caché dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
@@ -415,12 +380,9 @@ const PRODUCTS = {
   'i-love-you': { name: 'I Love You', price: 250, desc: 'Trois mots, cachés jusqu\'au bon moment.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507270/i_love_you.jpg' }
 };
 
-/* ============================================================
-   URL PARSING & PAGE INITIALIZATION
-   ============================================================ */
 const params = new URLSearchParams(window.location.search);
-const productId = params.get('id') || 'you-are-my-soulmate'; // Default to soulmate
-
+const productId = params.get('id') || 'you-are-my-soulmate';
+const customMessage = params.get('msg') || '';
 const product = PRODUCTS[productId];
 
 if (product) {
@@ -429,16 +391,21 @@ if (product) {
   document.getElementById('productTitle').textContent = product.name;
   document.getElementById('productBreadcrumb').textContent = product.name;
   document.getElementById('productPrice').textContent = product.price + ' DHS';
-  document.getElementById('productDesc').textContent = product.desc;
+  
+  if (customMessage && productId === 'votre-message') {
+    document.getElementById('customMessageBox').style.display = 'block';
+    document.getElementById('customMessageText').textContent = '« ' + customMessage + ' »';
+    document.getElementById('productDesc').textContent = 'Votre message personnalisé sera coulé au coeur de la bougie.';
+  } else {
+    document.getElementById('productDesc').textContent = product.desc;
+  }
   document.title = 'KLIMA — ' + product.name;
-} else {
-  document.getElementById('productTitle').textContent = 'Produit introuvable';
-  document.getElementById('productDesc').textContent = 'Veuillez retourner à la boutique.';
+
+  if (typeof fbq === 'function') {
+    fbq('track', 'ViewContent', { content_name: product.name, content_ids: [productId], content_type: 'product', value: product.price, currency: 'MAD' });
+  }
 }
 
-/* ============================================================
-   QUANTITY & GIFT TOGGLE
-   ============================================================ */
 let currentQty = 1;
 function updateQty(change) {
   currentQty += change;
@@ -451,82 +418,54 @@ let isGift = false;
 function toggleGift() {
   isGift = !isGift;
   document.getElementById('isGift').checked = isGift;
-  
   const giftFields = document.getElementById('giftFields');
   const paymentNote = document.getElementById('paymentNote');
   
   if (isGift) {
     giftFields.classList.add('is-visible');
-    paymentNote.innerHTML = `
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
-      Cadeau : nous vous contacterons sur WhatsApp pour le paiement par virement.
-    `;
+    paymentNote.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg> Cadeau : nous vous contacterons sur WhatsApp pour le paiement par virement.`;
   } else {
     giftFields.classList.remove('is-visible');
-    paymentNote.innerHTML = `
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
-      Paiement à la livraison. Livraison offerte.
-    `;
+    paymentNote.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg> Paiement à la livraison. Livraison offerte.`;
   }
 }
 
-/* ============================================================
-   FORM SUBMISSION — Formspree Integration
-   ============================================================ */
 function handleOrder(e) {
   e.preventDefault();
-  
   const form = e.target;
   const submitBtn = document.getElementById('submitBtn');
-  
-  // Basic validation
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
+  if (!form.checkValidity()) { form.reportValidity(); return; }
 
-  // Collect data
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  
-  // Add product info
   data.productName = product.name;
   data.productPrice = product.price;
   data.quantity = currentQty;
   data.totalPrice = product.price * currentQty;
   data.isGift = isGift;
+  if (customMessage && productId === 'votre-message') data.customMessage = customMessage;
 
-  // Change button state
   submitBtn.textContent = 'Envoi en cours…';
   submitBtn.disabled = true;
 
-  // Send to Formspree
   fetch('https://formspree.io/f/xqpqadgk', {
     method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   })
   .then(response => {
     if (response.ok) {
-      // Save order details for thank-you page
       sessionStorage.setItem('lastOrder', JSON.stringify(data));
       window.location.href = 'merci.html';
-    } else {
-      throw new Error('Formspree error');
-    }
+    } else { throw new Error('Formspree error'); }
   })
   .catch(error => {
-    console.error('Error:', error);
     showToast('Une erreur est survenue. Veuillez réessayer ou nous contacter sur WhatsApp.');
     submitBtn.textContent = 'Confirmer la commande';
     submitBtn.disabled = false;
   });
 }
 
-/* TOAST */
 let toastTimer;
 const toast = document.getElementById('toast');
 function showToast(msg) {
@@ -536,6 +475,5 @@ function showToast(msg) {
   toastTimer = setTimeout(() => toast.classList.remove('is-on'), 4000);
 }
 </script>
-
 </body>
 </html>
