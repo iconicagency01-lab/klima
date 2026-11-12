@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>KLIMA — Détails du produit</title>
+<meta name="description" content="Découvrez nos bougies à message caché. Livraison offerte au Maroc." />
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   KLIMA — PRODUCT PAGE
+   ============================================================ */
+:root{
+  --cream:#FCF8F5;
+  --paper:#FFFFFF;
+  --ink:#2A2220;
+  --ink-soft:#6E615C;
+  --muted:#A89C96;
+  --line:#F0E6DF;
+  --line-soft:#F7EFE9;
+
+  --pink:#FC6E8E;
+  --pink-light:#FFD1DC;
+  --pink-dark:#D94E6A;
+
+  --display:'Fraunces', Georgia, serif;
+  --body:'DM Sans', system-ui, sans-serif;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --max:1200px;
+  --radius:12px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:16px;
+  font-weight:400; /* FIX: body text is now regular weight, not light */
+  -webkit-font-smoothing: subpixel-antialiased; /* FIX: prevents overly thin text on macOS */
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select,textarea{font:inherit}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--pink);color:#fff}
+
+/* BASE */
+.container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
+@media(max-width:720px){.container{padding-inline:20px}}
+.section{padding-block:clamp(64px,10vw,100px)}
+
+.h-display{
+  font-family:var(--display);
+  font-weight:400; /* FIX: upgraded from 300 to 400 for presence */
+  letter-spacing:-.03em;
+  line-height:1.06;
+  font-variation-settings:"opsz" 96;
+}
+.h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05}
+.h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+.h-display em{font-style:italic;font-weight:400;color:var(--pink)}
+
+.eyebrow{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
+.lead{color:var(--ink-soft);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.75;font-weight:400;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:500;font-size:.86rem;letter-spacing:.02em;transition:background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);white-space:nowrap;width:100%;}
+.btn:active{transform:scale(0.98);}
+.btn:hover{background:var(--pink);color:#fff;}
+.btn--pink{background:var(--pink);color:#fff}
+.btn--pink:hover{background:var(--ink);color:var(--cream)}
+.btn--large{padding:18px 40px;font-size:.95rem}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:background .4s;}
+.header__inner{display:flex;justify-content:space-between;align-items:center;height:80px;}
+.logo img{height:32px;width:auto;transition:filter .4s;}
+.header__actions{display:flex;align-items:center;gap:4px;}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--ink);position:relative;transition:background .25s;}
+.icon-btn:hover{background:rgba(0,0,0,0.05)}
+.icon-btn svg{width:20px;height:20px;stroke-width:1.4}
+.cart-count{position:absolute;top:6px;right:4px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--pink);color:#fff;font-size:9px;font-weight:600;line-height:16px;text-align:center;transform:scale(0);transition:transform .3s var(--ease);}
+.cart-count.is-on{transform:scale(1)}
+
+/* CANDLE CART ICON */
+.cart-candle{position:relative;width:22px;height:26px;}
+.cart-candle .flame{position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:6px;height:9px;border-radius:50% 50% 20% 20%;background:radial-gradient(ellipse at bottom,#FFC15C,#FFF3D0 80%);box-shadow:0 0 6px rgba(255,180,60,.6);opacity:0;transition:opacity .3s;animation:flicker 1.8s infinite alternate;}
+.cart-candle.is-lit .flame{opacity:1;}
+@keyframes flicker{0%{transform:translateX(-50%) scale(1) rotate(-2deg)}100%{transform:translateX(-50%) scale(1.1) rotate(2deg)}}
+.cart-candle .body{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:14px;height:18px;border-radius:2px 2px 3px 3px;background:var(--paper);border:1.4px solid var(--ink);}
+.cart-candle .wick{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:1.5px;height:4px;background:var(--ink);}
+
+/* PRODUCT LAYOUT */
+.product-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start;padding-top:32px;}
+@media(max-width:900px){.product-layout{grid-template-columns:1fr;gap:32px;}}
+
+/* Product Image */
+.product-image{border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1.1;background:var(--pink-light);position:sticky;top:100px;}
+.product-image img{width:100%;height:100%;object-fit:cover;}
+
+/* Product Info */
+.product-info{display:flex;flex-direction:column;gap:20px;}
+.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:8px;}
+.breadcrumb a:hover{color:var(--pink);}
+.product-title{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;}
+.product-price{font-family:var(--display);font-size:1.4rem;color:var(--ink);font-weight:400;}
+
+/* Mechanism Box */
+.mechanism-box{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:12px;margin-top:8px;}
+.mechanism-box h4{font-family:var(--display);font-size:1.05rem;font-weight:400;}
+.mechanism-box p{font-size:.85rem;color:var(--ink-soft);line-height:1.6;display:flex;align-items:flex-start;gap:10px;}
+.mechanism-box svg{width:18px;height:18px;flex:none;color:var(--pink);margin-top:2px;}
+
+/* Quantity & CTA */
+.action-row{display:flex;gap:12px;margin-top:12px;align-items:stretch;}
+.qty-selector{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--paper);overflow:hidden;}
+.qty-selector button{width:44px;height:100%;display:grid;place-items:center;font-size:1.2rem;color:var(--ink-soft);transition:background .2s;}
+.qty-selector button:hover{background:var(--line-soft);}
+.qty-selector span{width:32px;text-align:center;font-weight:500;font-size:.9rem;}
+.action-row .btn{flex:1;}
+
+/* Express Checkout Form */
+.checkout-form{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:24px;box-shadow:0 10px 30px -10px rgba(42,34,32,.05);}
+.checkout-form h3{font-family:var(--display);font-size:1.2rem;margin-bottom:16px;font-weight:400;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.form-group label{font-size:.75rem;font-weight:600;color:var(--ink-soft);}
+.form-group input{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--cream);font-size:.9rem;transition:border-color .2s;}
+.form-group input:focus{outline:none;border-color:var(--pink);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+
+/* Gift Toggle */
+.gift-toggle{display:flex;align-items:center;gap:10px;margin:20px 0;padding:14px;background:var(--pink-light);border-radius:8px;cursor:pointer;}
+.gift-toggle input{width:18px;height:18px;accent-color:var(--pink);cursor:pointer;}
+.gift-toggle label{font-size:.85rem;font-weight:500;color:var(--ink);cursor:pointer;}
+
+/* Hidden gift fields */
+.gift-fields{display:none;border-top:1px dashed var(--line);padding-top:16px;margin-top:16px;}
+.gift-fields.is-visible{display:block;animation:slideDown .3s ease;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+
+/* Payment Note */
+.payment-note{font-size:.75rem;color:var(--ink-soft);text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;}
+.payment-note svg{width:14px;height:14px;color:var(--ink);}
+
+/* Trust Signals */
+.trust-signals{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--ink-soft);}
+.trust-item svg{width:16px;height:16px;color:var(--pink);}
+
+/* FAQ Inline */
+.inline-faq{margin-top:32px;border-top:1px solid var(--line);padding-top:24px;}
+.inline-faq h4{font-family:var(--display);font-size:1.1rem;margin-bottom:12px;font-weight:400;}
+.faq-item{border-bottom:1px solid var(--line);padding:12px 0;}
+.faq-item summary{font-size:.9rem;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::after{content:"+";font-size:1.2rem;color:var(--muted);}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{font-size:.85rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;}
+
+/* FOOTER */
+.footer{background:var(--cream);padding-block:48px 32px;border-top:1px solid var(--line);margin-top:64px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;}
+@media(max-width:900px){.footer__grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:480px){.footer__grid{grid-template-columns:1fr}}
+.footer__logo{height:28px;width:auto;margin-bottom:20px}
+.footer__about{font-size:.85rem;color:var(--ink-soft);max-width:32ch;line-height:1.7;margin-bottom:24px}
+.footer h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:20px;}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a{font-size:.85rem;color:var(--ink-soft);transition:color .25s}
+.footer ul a:hover{color:var(--pink)}
+.footer__social{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-soft);font-weight:500;transition:color .25s;}
+.footer__social:hover{color:var(--pink)}
+.footer__social svg{width:16px;height:16px}
+.footer__bottom{padding-top:32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;z-index:95;transform:translate(-50%,150%);background:var(--ink);color:var(--cream);padding:12px 22px;border-radius:999px;font-size:.78rem;font-weight:500;transition:transform .4s var(--ease);white-space:nowrap;}
+.toast.is-on{transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo" aria-label="KLIMA accueil">
+      <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
+    </a>
+    <div class="header__actions">
+      <a href="index.html" class="icon-btn" aria-label="Retour à la boutique" style="width:auto;padding-inline:12px;font-size:.85rem;font-weight:600;">Boutique</a>
+      <button class="icon-btn" id="cartBtn" aria-label="Ouvrir le panier">
+        <div class="cart-candle" id="cartCandle">
+          <div class="flame"></div>
+          <div class="wick"></div>
+          <div class="body"></div>
+        </div>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container section" style="padding-top:100px;">
+
+  <div class="product-layout">
+    
+    <!-- LEFT: IMAGE -->
+    <div class="product-image">
+      <img id="productImage" src="" alt="Bougie KLIMA" />
+    </div>
+
+    <!-- RIGHT: INFO & FORM -->
+    <div class="product-info">
+      
+      <div class="breadcrumb">
+        <a href="index.html">Boutique</a> &nbsp;›&nbsp; <span id="productBreadcrumb">Produit</span>
+      </div>
+
+      <h1 class="h-display product-title" id="productTitle">Chargement…</h1>
+      <div class="product-price" id="productPrice">0 DHS</div>
+      
+      <p class="lead" id="productDesc"></p>
+
+      <div class="mechanism-box">
+        <h4>Comment ça marche ?</h4>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
+          Un message caché dans la cire, écrit avec des perles. Il apparaît lentement au fil de la combustion — environ 1h30 à 2h après la première flamme.
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
+          Livré dans un emballage cadeau, prêt à offrir.
+        </p>
+      </div>
+
+      <!-- EXPRESS CHECKOUT FORM -->
+      <form class="checkout-form" id="orderForm" onsubmit="handleOrder(event)">
+        <h3>Commander</h3>
+        
+        <!-- Self Order Fields -->
+        <div class="form-group">
+          <label for="name">Votre nom complet *</label>
+          <input type="text" id="name" name="name" required placeholder="Ex: Sarah Bennani" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Votre numéro de téléphone *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="06 XX XX XX XX" />
+        </div>
+        <div class="form-group">
+          <label for="address">Adresse de livraison *</label>
+          <input type="text" id="address" name="address" required placeholder="Rue, quartier, numéro" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">Ville *</label>
+            <input type="text" id="city" name="city" required placeholder="Ex: Casablanca" />
+          </div>
+        </div>
+
+        <!-- Gift Toggle -->
+        <div class="gift-toggle" onclick="toggleGift()">
+          <input type="checkbox" id="isGift" name="isGift" onclick="event.stopPropagation(); toggleGift();" />
+          <label for="isGift">C'est un cadeau ? (Expédier à quelqu'un d'autre)</label>
+        </div>
+
+        <!-- Gift Recipient Fields -->
+        <div class="gift-fields" id="giftFields">
+          <div class="form-group">
+            <label for="recipientName">Nom de la personne *</label>
+            <input type="text" id="recipientName" name="recipientName" placeholder="Ex: Yassine" />
+          </div>
+          <div class="form-group">
+            <label for="recipientPhone">Téléphone de la personne *</label>
+            <input type="tel" id="recipientPhone" name="recipientPhone" placeholder="06 XX XX XX XX" />
+          </div>
+          <div class="form-group">
+            <label for="recipientAddress">Adresse de livraison *</label>
+            <input type="text" id="recipientAddress" name="recipientAddress" placeholder="Rue, quartier, numéro" />
+          </div>
+          <div class="form-group">
+            <label for="recipientCity">Ville *</label>
+            <input type="text" id="recipientCity" name="recipientCity" placeholder="Ex: Marrakech" />
+          </div>
+        </div>
+
+        <!-- Quantity & CTA -->
+        <div class="action-row">
+          <div class="qty-selector">
+            <button type="button" onclick="updateQty(-1)">−</button>
+            <span id="qtyDisplay">1</span>
+            <button type="button" onclick="updateQty(1)">+</button>
+          </div>
+          <button type="submit" class="btn btn--pink btn--large" id="submitBtn">
+            Confirmer la commande
+          </button>
+        </div>
+
+        <!-- Payment Note -->
+        <div class="payment-note" id="paymentNote">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+          Paiement à la livraison. Livraison offerte.
+        </div>
+      </form>
+
+      <!-- TRUST -->
+      <div class="trust-signals">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3z"/><path d="M16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>
+          Livraison offerte au Maroc
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
+          Coulée à la main
+        </div>
+      </div>
+
+      <!-- INLINE FAQ -->
+      <div class="inline-faq">
+        <h4>Questions fréquentes</h4>
+        <details class="faq-item">
+          <summary>Combien de temps pour voir le message ?</summary>
+          <p>Le message apparaît généralement après 1h30 à 2h de combustion. Nous recommandons de brûler la bougie 2 à 3 heures à la fois.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je envoyer la bougie directement à quelqu'un ?</summary>
+          <p>Oui. Cochez la case "C'est un cadeau" dans le formulaire. Nous vous contacterons sur WhatsApp pour le paiement par virement (puisque le destinataire ne doit pas payer à la livraison).</p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
+        <p class="footer__about">Bougies à message caché. Coulées à la main au Maroc, faites pour être offertes.</p>
+        <a href="https://instagram.com/klimabougies" class="footer__social" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>
+          @klimabougies
+        </a>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="index.html#collection">Toutes les bougies</a></li>
+          <li><a href="index.html#custom">Votre message</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aide</h4>
+        <ul>
+          <li><a href="#">Livraison &amp; retours</a></li>
+          <li><a href="mailto:contact@klimabougies.com">contact@klimabougies.com</a></li>
+          <li><a href="tel:+212688400044">06 88 40 00 44</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>KLIMA</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="https://wa.me/212688400088" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 KLIMA. Tous droits réservés.</span>
+      <span>Coulée à la main au Maroc.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Commande confirmée</div>
+
+<script>
+/* ============================================================
+   PRODUCT DATA MAP
+   ============================================================ */
+const PRODUCTS = {
+  'votre-message': { name: 'Votre Message', price: 300, desc: 'Écrivez ce que vous voulez. Nous le cachons dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
+  'you-are-my-soulmate': { name: 'You Are My Soulmate', price: 250, desc: 'Un mot d\'amour, caché dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
+  'happy-anniversary': { name: 'Happy Anniversary', price: 250, desc: 'Pour les années, et celles à venir.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794508870/happy_annvirersay.png' },
+  'youre-my-twin-flame': { name: "You're My Twin Flame", price: 250, desc: 'Pour celle qui se sent comme chez soi.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507541/youre_my_twin_flame.png' },
+  'we-are-pregnant': { name: 'We Are Pregnant', price: 250, desc: 'La nouvelle, gardée secrète un peu plus longtemps.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507509/we_are_pregnant.png' },
+  'youre-a-queen': { name: "You're a Queen", price: 250, desc: 'Pour elle, parce qu\'elle l\'est.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507413/youre_a_queen.jpg' },
+  'si-tu-sautes-je-saute': { name: 'Si Tu Sautes, Je Saute', price: 250, desc: 'Pour l\'ami qui saute avec toi.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507374/si_tu_sautes_je_saute.jpg' },
+  'je-brule-pour-toi': { name: 'Je Brûle Pour Toi', price: 250, desc: 'Un mot d\'amour à la française.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507373/je_brule_pour_toi.jpg' },
+  'papa-de-lannee': { name: "Papa de l'Année", price: 250, desc: 'Pour le papa qui l\'a mérité.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507299/papa_de_lanne.jpg' },
+  'je-taime': { name: "Je T'aime", price: 250, desc: 'La chose la plus simple, la plus belle.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507275/je_taime.jpg' },
+  'i-love-you': { name: 'I Love You', price: 250, desc: 'Trois mots, cachés jusqu\'au bon moment.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507270/i_love_you.jpg' }
+};
+
+/* ============================================================
+   URL PARSING & PAGE INITIALIZATION
+   ============================================================ */
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id') || 'you-are-my-soulmate'; // Default to soulmate
+
+const product = PRODUCTS[productId];
+
+if (product) {
+  document.getElementById('productImage').src = product.img;
+  document.getElementById('productImage').alt = product.name;
+  document.getElementById('productTitle').textContent = product.name;
+  document.getElementById('productBreadcrumb').textContent = product.name;
+  document.getElementById('productPrice').textContent = product.price + ' DHS';
+  document.getElementById('productDesc').textContent = product.desc;
+  document.title = 'KLIMA — ' + product.name;
+} else {
+  document.getElementById('productTitle').textContent = 'Produit introuvable';
+  document.getElementById('productDesc').textContent = 'Veuillez retourner à la boutique.';
+}
+
+/* ============================================================
+   QUANTITY & GIFT TOGGLE
+   ============================================================ */
+let currentQty = 1;
+function updateQty(change) {
+  currentQty += change;
+  if (currentQty < 1) currentQty = 1;
+  if (currentQty > 10) currentQty = 10;
+  document.getElementById('qtyDisplay').textContent = currentQty;
+}
+
+let isGift = false;
+function toggleGift() {
+  isGift = !isGift;
+  document.getElementById('isGift').checked = isGift;
+  
+  const giftFields = document.getElementById('giftFields');
+  const paymentNote = document.getElementById('paymentNote');
+  
+  if (isGift) {
+    giftFields.classList.add('is-visible');
+    paymentNote.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+      Cadeau : nous vous contacterons sur WhatsApp pour le paiement par virement.
+    `;
+  } else {
+    giftFields.classList.remove('is-visible');
+    paymentNote.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
+      Paiement à la livraison. Livraison offerte.
+    `;
+  }
+}
+
+/* ============================================================
+   FORM SUBMISSION — Formspree Integration
+   ============================================================ */
+function handleOrder(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const submitBtn = document.getElementById('submitBtn');
+  
+  // Basic validation
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  // Collect data
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  
+  // Add product info
+  data.productName = product.name;
+  data.productPrice = product.price;
+  data.quantity = currentQty;
+  data.totalPrice = product.price * currentQty;
+  data.isGift = isGift;
+
+  // Change button state
+  submitBtn.textContent = 'Envoi en cours…';
+  submitBtn.disabled = true;
+
+  // Send to Formspree
+  fetch('https://formspree.io/f/xqpqadgk', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) {
+      // Save order details for thank-you page
+      sessionStorage.setItem('lastOrder', JSON.stringify(data));
+      window.location.href = 'merci.html';
+    } else {
+      throw new Error('Formspree error');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    showToast('Une erreur est survenue. Veuillez réessayer ou nous contacter sur WhatsApp.');
+    submitBtn.textContent = 'Confirmer la commande';
+    submitBtn.disabled = false;
+  });
+}
+
+/* TOAST */
+let toastTimer;
+const toast = document.getElementById('toast');
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('is-on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('is-on'), 4000);
+}
+</script>
+
+</body>
+</html>
