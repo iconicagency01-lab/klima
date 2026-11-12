@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -26,7 +26,7 @@ fbq('track', 'PageView');
 <!-- End Meta Pixel Code -->
 <style>
 /* ============================================================
-   KLIMA — PHASE 1 FOUNDATION
+   KLIMA — HOMEPAGE
    ============================================================ */
 :root{
   --cream:#FCF8F5;
@@ -57,7 +57,8 @@ body{
   color:var(--ink);
   line-height:1.65;
   font-size:16px;
-  -webkit-font-smoothing:antialiased;
+  font-weight:400;
+  -webkit-font-smoothing: subpixel-antialiased;
   overflow-x:hidden;
 }
 img,svg{display:block;max-width:100%}
@@ -71,10 +72,16 @@ a{color:inherit;text-decoration:none}
 @media(max-width:720px){.container{padding-inline:20px}}
 .section{padding-block:clamp(64px,10vw,140px)}
 
-.h-display{font-family:var(--display);font-weight:300;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
+.h-display{
+  font-family:var(--display);
+  font-weight:400;
+  letter-spacing:-.03em;
+  line-height:1.06;
+  font-variation-settings:"opsz" 96;
+}
 .h1{font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.02}
 .h2{font-size:clamp(1.8rem,5vw,3.2rem)}
-.h-display em{font-style:italic;font-weight:300;color:var(--pink)}
+.h-display em{font-style:italic;font-weight:400;color:var(--pink)}
 
 .eyebrow{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
 .lead{color:var(--ink-soft);font-size:clamp(.95rem,1.5vw,1.05rem);max-width:48ch;line-height:1.75}
@@ -129,7 +136,7 @@ a{color:inherit;text-decoration:none}
 
 .mobile-nav{position:fixed;inset:0;z-index:70;background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:40px;transform:translateY(-100%);transition:transform .5s var(--ease);}
 .mobile-nav.is-open{transform:translateY(0)}
-.mobile-nav a{font-family:var(--display);font-weight:300;font-size:2rem;letter-spacing:-.02em;padding-block:20px;border-bottom:1px solid var(--line);}
+.mobile-nav a{font-family:var(--display);font-weight:400;font-size:2rem;letter-spacing:-.02em;padding-block:20px;border-bottom:1px solid var(--line);}
 .mobile-nav__close{position:absolute;top:16px;right:16px}
 
 /* CANDLE CART ICON */
@@ -142,7 +149,7 @@ a{color:inherit;text-decoration:none}
 
 /* FULL BLEED HERO */
 .hero{position:relative;height:100svh;min-height:600px;width:100%;display:flex;align-items:center;overflow:hidden;padding-top:72px;}
-.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position: right bottom; z-index:0;} /* Shifted to right bottom */
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right bottom;z-index:0;}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(252,248,245,0.65) 0%, rgba(252,248,245,0.35) 30%, rgba(252,248,245,0) 50%);z-index:1;}
 .hero__content{position:relative;z-index:2;width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px;display:flex;flex-direction:column;align-items:flex-start;gap:24px;}
 .hero__title em{color:var(--pink-dark)}
@@ -151,7 +158,7 @@ a{color:inherit;text-decoration:none}
 @media(max-width:900px){
   .hero{height:100svh;align-items:flex-end;padding-bottom:12vh;}
   .hero__bg{object-position: 65% 20%;}
-  .hero__overlay{background:linear-gradient(180deg, rgba(252,248,245,0.3) 0%, rgba(252,248,245,0.15) 40%, rgba(252,248,245,0.75) 80%, rgba(252,248,245,0.9) 100%);} /* Reduced overlay */
+  .hero__overlay{background:linear-gradient(180deg, rgba(252,248,245,0.3) 0%, rgba(252,248,245,0.15) 40%, rgba(252,248,245,0.75) 80%, rgba(252,248,245,0.9) 100%);}
   .hero__content{align-items:center;text-align:center;padding-top:0;}
   .hero__actions{flex-direction:column;gap:12px;}
 }
@@ -168,7 +175,8 @@ a{color:inherit;text-decoration:none}
 .collection__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px);}
 @media(max-width:900px){.collection__grid{grid-template-columns:repeat(2,1fr);gap:20px;}}
 @media(max-width:500px){.collection__grid{grid-template-columns:1fr;gap:32px;}}
-.pcard{display:flex;flex-direction:column;}
+.pcard{display:flex;flex-direction:column;position:relative;}
+.pcard__link{display:flex;flex-direction:column;text-decoration:none;color:inherit;}
 .pcard__media{aspect-ratio:1/1.1;overflow:hidden;border-radius:8px;background:var(--pink-light);position:relative;}
 .pcard__media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
 .pcard:hover .pcard__media img{transform:scale(1.03)}
@@ -177,7 +185,7 @@ a{color:inherit;text-decoration:none}
 .pcard__name{font-family:var(--display);font-weight:400;font-size:1.05rem;letter-spacing:-.01em;line-height:1.3;}
 .pcard__price{font-family:var(--display);font-weight:400;font-size:.95rem;color:var(--ink-soft);white-space:nowrap;}
 .pcard__desc{font-size:.8rem;color:var(--muted);margin-top:2px;line-height:1.4;}
-.pcard__add{margin-top:14px;font-size:.75rem;font-weight:600;color:var(--ink-soft);display:inline-flex;align-items:center;gap:6px;transition:color .3s;padding-block:8px;}
+.pcard__add{margin-top:14px;font-size:.75rem;font-weight:600;color:var(--ink-soft);display:inline-flex;align-items:center;gap:6px;transition:color .3s;padding-block:8px;position:relative;z-index:5;}
 .pcard__add:hover{color:var(--pink)}
 .pcard__add svg{width:11px;height:11px}
 
@@ -206,7 +214,6 @@ a{color:inherit;text-decoration:none}
 .candle-wick-wrap {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;z-index:3;}
 .candle-wick {width:4px;height:6px;background:#3A2E28;border-radius:2px;z-index:2;}
 .candle-flame {width:16px;height:24px;background:radial-gradient(ellipse at bottom, #FFC15C 0%, #FFF3D0 80%);border-radius: 50% 50% 20% 20%;box-shadow: 0 0 20px 8px rgba(255, 180, 60, 0.4);transform-origin: bottom center;animation: flicker 2s infinite alternate ease-in-out;position:absolute;bottom:4px;z-index:1;}
-@keyframes flicker {0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }50% { transform: scale(1.05) rotate(2deg); opacity: 1; }100% { transform: scale(0.95) rotate(-1deg); opacity: 0.9; }}
 
 /* BEAD OVERLAY */
 .bead-overlay {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 72%;display: flex;flex-direction: column;align-items: center;justify-content: space-between;height: 62%;pointer-events: none;z-index: 4;}
@@ -292,13 +299,13 @@ a{color:inherit;text-decoration:none}
 <!-- HEADER -->
 <header class="header" id="header">
   <div class="container header__inner">
-    <a href="#" class="logo" aria-label="KLIMA accueil">
+    <a href="index.html" class="logo" aria-label="KLIMA accueil">
       <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#collection">Boutique</a>
-      <a href="#custom">Votre message</a>
-      <a href="#faq">FAQ</a>
+      <a href="index.html#collection">Boutique</a>
+      <a href="index.html#custom">Votre message</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <div class="header__actions">
       <button class="icon-btn" id="cartBtn" aria-label="Ouvrir le panier">
@@ -320,9 +327,9 @@ a{color:inherit;text-decoration:none}
   <button class="icon-btn mobile-nav__close" id="closeNav" aria-label="Fermer le menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
-  <a href="#collection">Boutique</a>
-  <a href="#custom">Votre message</a>
-  <a href="#faq">FAQ</a>
+  <a href="index.html#collection">Boutique</a>
+  <a href="index.html#custom">Votre message</a>
+  <a href="faq.html">FAQ</a>
 </div>
 
 <main>
@@ -397,13 +404,13 @@ a{color:inherit;text-decoration:none}
         Un mot d'amour. Un remerciement. Une blague entre vous.
         Jusqu'à 32 caractères — on coule la bougie autour de vos mots.
       </p>
-      <form class="custom__form" onsubmit="event.preventDefault(); addCustom();">
+      <form class="custom__form" action="product.html?id=votre-message" method="GET" onsubmit="return handleCustomBuilder(event)">
         <div class="custom__field">
-          <input id="customInput" type="text" maxlength="32" placeholder="Écrivez ce que vous voulez cacher…" autocomplete="off" />
+          <input id="customInput" type="text" name="msg" maxlength="32" placeholder="Écrivez ce que vous voulez cacher…" autocomplete="off" />
         </div>
         <div class="custom__helper" id="lineHelper">Lettres et chiffres uniquement · 32 caractères max</div>
         <button type="submit" class="btn btn--pink custom__submit btn--large">
-          Ajouter au panier · 300 DHS
+          Créer cette bougie · 300 DHS
         </button>
         <span class="custom__note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg>
@@ -436,9 +443,6 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </section>
-
-<!-- FAQ (placeholder) -->
-<section class="section" id="faq" style="padding-top:0;display:none;"></section>
 
 <!-- FINAL CTA -->
 <section class="final-cta">
@@ -475,17 +479,16 @@ a{color:inherit;text-decoration:none}
       <div>
         <h4>Boutique</h4>
         <ul>
-          <li><a href="#collection">Toutes les bougies</a></li>
-          <li><a href="#custom">Votre message</a></li>
-          <li><a href="#">Coffrets cadeaux</a></li>
+          <li><a href="index.html#collection">Toutes les bougies</a></li>
+          <li><a href="index.html#custom">Votre message</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h4>Aide</h4>
         <ul>
-          <li><a href="#">Livraison &amp; retours</a></li>
-          <li><a href="#">Entretien de la bougie</a></li>
-          <li><a href="#">Suivre ma commande</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">Livraison &amp; retours</a></li>
           <li><a href="mailto:contact@klimabougies.com">contact@klimabougies.com</a></li>
           <li><a href="tel:+212688400044">06 88 40 00 44</a></li>
         </ul>
@@ -493,9 +496,7 @@ a{color:inherit;text-decoration:none}
       <div>
         <h4>KLIMA</h4>
         <ul>
-          <li><a href="#">Notre histoire</a></li>
-          <li><a href="#">Points de vente</a></li>
-          <li><a href="#">Vente en gros</a></li>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
           <li><a href="https://wa.me/212688400088" target="_blank" rel="noopener">WhatsApp</a></li>
         </ul>
       </div>
@@ -521,7 +522,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="drawer__foot">
     <div class="drawer__total"><span>Sous-total</span><span id="cartTotal">0 DHS</span></div>
-    <button class="btn btn--pink btn--large">Passer la commande</button>
+    <button class="btn btn--pink btn--large" onclick="window.location.href='product.html?id=checkout'">Passer la commande</button>
     <span class="drawer__note">Livraison offerte partout au Maroc</span>
   </div>
 </aside>
@@ -529,39 +530,42 @@ a{color:inherit;text-decoration:none}
 <div class="toast" id="toast">Ajouté au panier</div>
 
 <script>
-/* PRODUCTS */
+/* ============================================================
+   PRODUCTS (Added IDs to link to the product page)
+   ============================================================ */
 const PRODUCTS = [
-  { name:'Votre Message', price:300, desc:'Vos mots, cachés dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
-  { name:'You Are My Soulmate', price:250, desc:'Un mot d\'amour, caché dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
-  { name:'Happy Anniversary', price:250, desc:'Pour les années, et celles à venir', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794508870/happy_annvirersay.png' },
-  { name:"You're My Twin Flame", price:250, desc:'Pour celle qui se sent comme chez soi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507541/youre_my_twin_flame.png' },
-  { name:'We Are Pregnant', price:250, desc:'La nouvelle, gardée secrète un peu plus longtemps', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507509/we_are_pregnant.png' },
-  { name:"You're a Queen", price:250, desc:'Pour elle, parce qu\'elle l\'est', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507413/youre_a_queen.jpg' },
-  { name:'Si Tu Sautes, Je Saute', price:250, desc:'Pour l\'ami qui saute avec toi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507374/si_tu_sautes_je_saute.jpg' },
-  { name:'Je Brûle Pour Toi', price:250, desc:'Un mot d\'amour à la française', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507373/je_brule_pour_toi.jpg' },
-  { name:"Papa de l'Année", price:250, desc:'Pour le papa qui l\'a mérité', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507299/papa_de_lanne.jpg' },
-  { name:"Je T'aime", price:250, desc:'La chose la plus simple, la plus belle', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507275/je_taime.jpg' },
-  { name:'I Love You', price:250, desc:'Trois mots, cachés jusqu\'au bon moment', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507270/i_love_you.jpg' }
+  { id:'votre-message', name:'Votre Message', price:300, desc:'Vos mots, cachés dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
+  { id:'you-are-my-soulmate', name:'You Are My Soulmate', price:250, desc:'Un mot d\'amour, caché dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
+  { id:'happy-anniversary', name:'Happy Anniversary', price:250, desc:'Pour les années, et celles à venir', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794508870/happy_annvirersay.png' },
+  { id:'youre-my-twin-flame', name:"You're My Twin Flame", price:250, desc:'Pour celle qui se sent comme chez soi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507541/youre_my_twin_flame.png' },
+  { id:'we-are-pregnant', name:'We Are Pregnant', price:250, desc:'La nouvelle, gardée secrète un peu plus longtemps', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507509/we_are_pregnant.png' },
+  { id:'youre-a-queen', name:"You're a Queen", price:250, desc:'Pour elle, parce qu\'elle l\'est', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507413/youre_a_queen.jpg' },
+  { id:'si-tu-sautes-je-saute', name:'Si Tu Sautes, Je Saute', price:250, desc:'Pour l\'ami qui saute avec toi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507374/si_tu_sautes_je_saute.jpg' },
+  { id:'je-brule-pour-toi', name:'Je Brûle Pour Toi', price:250, desc:'Un mot d\'amour à la française', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507373/je_brule_pour_toi.jpg' },
+  { id:'papa-de-lannee', name:"Papa de l'Année", price:250, desc:'Pour le papa qui l\'a mérité', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507299/papa_de_lanne.jpg' },
+  { id:'je-taime', name:"Je T'aime", price:250, desc:'La chose la plus simple, la plus belle', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507275/je_taime.jpg' },
+  { id:'i-love-you', name:'I Love You', price:250, desc:'Trois mots, cachés jusqu\'au bon moment', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507270/i_love_you.jpg' }
 ];
-const CUSTOM_IMG = 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg';
 
-/* GRID */
+/* GRID - Updated to wrap image & info in an anchor tag */
 const grid = document.getElementById('grid');
 grid.innerHTML = PRODUCTS.map(p => {
-  const isCustom = p.name === 'Votre Message';
+  const isCustom = p.id === 'votre-message';
   return `
   <article class="pcard reveal">
-    <div class="pcard__media">
-      ${isCustom ? '<span class="pcard__badge">Le plus offert</span>' : ''}
-      <img src="${p.img}" alt="${p.name}" loading="lazy" />
-    </div>
-    <div class="pcard__info">
-      <div>
-        <div class="pcard__name">${p.name}</div>
-        <div class="pcard__desc">${p.desc}</div>
+    <a href="product.html?id=${p.id}" class="pcard__link">
+      <div class="pcard__media">
+        ${isCustom ? '<span class="pcard__badge">Le plus offert</span>' : ''}
+        <img src="${p.img}" alt="${p.name}" loading="lazy" />
       </div>
-      <div class="pcard__price">${p.price} DHS</div>
-    </div>
+      <div class="pcard__info">
+        <div>
+          <div class="pcard__name">${p.name}</div>
+          <div class="pcard__desc">${p.desc}</div>
+        </div>
+        <div class="pcard__price">${p.price} DHS</div>
+      </div>
+    </a>
     <button class="pcard__add" data-name="${p.name}" data-price="${p.price}" data-img="${p.img}">
       Ajouter au panier
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
@@ -641,7 +645,10 @@ drawerBody.addEventListener('click', e => {
 });
 
 document.querySelectorAll('[data-name]').forEach(b => {
-  b.addEventListener('click', () => add(b.dataset.name, +b.dataset.price, b.dataset.img));
+  b.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent going to product page if clicking the button
+    add(b.dataset.name, +b.dataset.price, b.dataset.img);
+  });
 });
 
 const openDrawer = () => { drawer.classList.add('is-open'); overlay.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
@@ -651,23 +658,18 @@ document.getElementById('closeDrawer').onclick = closeDrawer;
 overlay.onclick = closeDrawer;
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-/* BEAD PACKING & ENFORCEMENT */
+/* BEAD PACKING FOR CUSTOM BUILDER */
 const customInput = document.getElementById('customInput');
 const lineHelper = document.getElementById('lineHelper');
 
-// Enforce letters and numbers only on keypress
 customInput.addEventListener('keydown', (e) => {
-  if (e.key === ' ') return; // allow space
-  if (e.key.length === 1 && !/[a-zA-Z0-9]/.test(e.key)) {
-    e.preventDefault();
-  }
+  if (e.key === ' ') return;
+  if (e.key.length === 1 && !/[a-zA-Z0-9]/.test(e.key)) e.preventDefault();
 });
 
 function packWords(text) {
-  // Strip accents and special characters, keep only A-Z, 0-9, and space
   const normalized = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const clean = normalized.trim().toUpperCase().replace(/[^A-Z0-9 ]/g, '');
-  
   if (!clean) return [];
   const words = clean.split(' ').filter(w => w.length > 0);
   const packed = []; let cur = '';
@@ -715,7 +717,6 @@ function renderBeads(text) {
   };
 
   if (!text.trim()) {
-    // Fix: Do not nest the row div. Just put the spans.
     const ghostHTML = Array(8).fill('<span class="bead bead--ghost">·</span>').join('');
     document.getElementById('top1Row').innerHTML = ghostHTML;
     document.getElementById('top2Row').innerHTML = ghostHTML;
@@ -753,12 +754,15 @@ customInput.addEventListener('input', () => {
 });
 renderBeads(''); updateHelper(0,'');
 
-function addCustom() {
+/* CUSTOM BUILDER REDIRECT */
+function handleCustomBuilder(e) {
+  e.preventDefault();
   const val = customInput.value.trim();
-  if (!val) { showToast('Écrivez un message d\'abord.'); customInput.focus(); return; }
-  add('Votre Message · « ' + val + ' »', 300, CUSTOM_IMG);
-  customInput.value = ''; lastValid = '';
-  renderBeads(''); updateHelper(0,'');
+  if (!val) { showToast('Écrivez un message d\'abord.'); customInput.focus(); return false; }
+  
+  // Redirect to product page with the custom message as a URL parameter
+  window.location.href = `product.html?id=votre-message&msg=${encodeURIComponent(val)}`;
+  return false;
 }
 
 /* TOAST */
