@@ -9,18 +9,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '2234756943801930');fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2234756943801930&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
 <style>
 :root{
   --cream:#FCF8F5;--paper:#FFFFFF;--ink:#2A2220;--ink-soft:#6E615C;--muted:#A89C96;
-  --line:#F0E6DF;--line-soft:#F7EFE9;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;
+  --line:#F0E6DF;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;
   --display:'Fraunces', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;
-  --ease:cubic-bezier(.22,.61,.36,1);--max:900px;--radius:12px;
+  --max:900px;--radius:12px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -38,14 +36,12 @@ a{color:inherit;text-decoration:none}
 .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
 .lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;max-width:48ch;}
 
-/* HEADER */
 .header{padding-block:20px;border-bottom:1px solid var(--line);background:var(--cream);}
 .header__inner{display:flex;justify-content:space-between;align-items:center;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
 .logo img{height:28px;width:auto;}
 .nav a{font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:24px;transition:color .3s;}
 .nav a:hover{color:var(--pink)}
 
-/* FAQ ACCORDION */
 .faq-list{display:flex;flex-direction:column;gap:8px;margin-top:32px;}
 .faq-item{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);overflow:hidden;}
 .faq-item summary{font-family:var(--display);font-size:1.05rem;font-weight:400;padding:20px 24px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .2s;}
@@ -54,13 +50,14 @@ a{color:inherit;text-decoration:none}
 .faq-item[open] summary::after{content:"−";}
 .faq-item p{padding:0 24px 20px;font-size:.92rem;color:var(--ink-soft);line-height:1.65;}
 
-/* FOOTER */
 .footer{padding-block:32px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted);text-align:center;}
+.footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
+.footer__bottom a:hover {color: var(--pink);}
+.footer__bottom-links {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;gap: 12px;}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header__inner">
     <a href="index.html" class="logo">
@@ -75,134 +72,70 @@ a{color:inherit;text-decoration:none}
 </header>
 
 <main class="container section">
-
   <span class="eyebrow">Questions fréquentes</span>
   <h1 class="h-display h1" style="margin-top:12px;">Tout ce qu'il faut savoir.</h1>
   <p class="lead" style="margin-top:16px;">Les réponses aux questions que vous vous posez avant de commander. Si vous ne trouvez pas, écrivez-nous.</p>
 
   <div class="faq-list">
-
     <details class="faq-item">
       <summary>Comment fonctionne le message caché ?</summary>
       <p>Le message est écrit avec de minuscules perles blanches aux lettres noires. Il est placé au cœur de la cire, sous la surface. Au fil de la combustion, les perles se révèlent progressivement. Ce n'est ni un papier, ni une carte : le message fait partie de la bougie elle-même.</p>
     </details>
-
     <details class="faq-item">
       <summary>Combien de temps faut-il pour que le message apparaisse ?</summary>
       <p>En général, le message commence à apparaître après <strong>1h30 à 2h</strong> de combustion. Nous recommandons de brûler la bougie par sessions de 2 à 3 heures pour une révélation progressive et sécurisée.</p>
     </details>
-
     <details class="faq-item">
       <summary>Puis-je écrire mon propre message ?</summary>
       <p>Oui. La bougie "Votre Message" vous permet d'écrire jusqu'à 32 caractères (lettres et chiffres uniquement, pas de caractères spéciaux). Nous le relisons avant de couler la bougie. Le prix est de 300 DHS.</p>
     </details>
-
     <details class="faq-item">
       <summary>Quels sont les délais de livraison ?</summary>
       <p>La livraison est <strong>offerte partout au Maroc</strong>. Comptez 2 à 4 jours ouvrés pour les grandes villes (Casablanca, Rabat, Marrakech, Agadir) et 3 à 5 jours pour les autres régions. Les commandes personnalisées peuvent prendre 1 à 2 jours supplémentaires car chaque bougie est coulée à la main.</p>
     </details>
-
     <details class="faq-item">
       <summary>Puis-je envoyer la bougie directement à quelqu'un ?</summary>
       <p>Oui. Lors de la commande, cochez la case <strong>"C'est un cadeau"</strong>. Vous pourrez alors renseigner le nom, le téléphone et l'adresse de la personne. Comme le destinataire ne doit pas payer à la livraison, nous vous contacterons sur WhatsApp pour organiser un <strong>paiement par virement</strong> avant l'expédition.</p>
     </details>
-
     <details class="faq-item">
       <summary>La bougie est-elle emballée comme un cadeau ?</summary>
       <p>Oui. Chaque commande est emballée avec un ruban, une étiquette cadeau et une petite carte. Elle arrive prête à être offerte, sans que vous ayez à ajouter quoi que ce soit.</p>
     </details>
-
     <details class="faq-item">
       <summary>Que faire si la bougie arrive endommagée ?</summary>
       <p>Écrivez-nous à <a href="mailto:contact@klimabougies.com" style="color:var(--pink);">contact@klimabougies.com</a> ou sur WhatsApp avec une photo. Nous vous renvoyons une nouvelle bougie sans frais. Nous coulons chaque bougie à la main, mais nous nous engageons à ce que vous receviez un produit parfait.</p>
     </details>
-
     <details class="faq-item">
       <summary>Livrez-vous en dehors du Maroc ?</summary>
       <p>Pour le moment, nous livrons uniquement au Maroc. Nous travaillons à étendre la livraison à l'international. Inscrivez-vous à notre liste WhatsApp pour être informé du lancement.</p>
     </details>
-
   </div>
-
 </main>
 
 <footer class="footer container">
-  © 2026 KLIMA. Tous droits réservés. Coulée à la main au Maroc.
+  <div class="footer__bottom-links">
+    <span>© 2026 KLIMA. Tous droits réservés.</span>
+    <a href="politique-de-confidentialite.html">Confidentialité</a>
+    <a href="conditions-generales.html">CGV</a>
+    <a href="politique-de-retour.html">Retours</a>
+  </div>
 </footer>
 
-<!-- FAQ Schema Markup (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Comment fonctionne le message caché ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le message est écrit avec de minuscules perles blanches aux lettres noires. Il est placé au cœur de la cire, sous la surface. Au fil de la combustion, les perles se révèlent progressivement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Combien de temps faut-il pour que le message apparaisse ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En général, le message commence à apparaître après 1h30 à 2h de combustion. Nous recommandons de brûler la bougie par sessions de 2 à 3 heures."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Puis-je écrire mon propre message ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. La bougie 'Votre Message' vous permet d'écrire jusqu'à 32 caractères. Nous le relisons avant de couler la bougie. Le prix est de 300 DHS."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quels sont les délais de livraison ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La livraison est offerte partout au Maroc. Comptez 2 à 4 jours ouvrés pour les grandes villes et 3 à 5 jours pour les autres régions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Puis-je envoyer la bougie directement à quelqu'un ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Cochez la case 'C'est un cadeau' lors de la commande. Nous vous contacterons sur WhatsApp pour organiser un paiement par virement avant l'expédition."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "La bougie est-elle emballée comme un cadeau ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Chaque commande est emballée avec un ruban, une étiquette cadeau et une petite carte."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que faire si la bougie arrive endommagée ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Écrivez-nous avec une photo et nous vous renvoyons une nouvelle bougie sans frais."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Livrez-vous en dehors du Maroc ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour le moment, nous livrons uniquement au Maroc. Inscrivez-vous à notre liste WhatsApp pour être informé du lancement international."
-      }
-    }
+    {"@type": "Question", "name": "Comment fonctionne le message caché ?", "acceptedAnswer": {"@type": "Answer", "text": "Le message est écrit avec de minuscules perles blanches aux lettres noires. Il est placé au cœur de la cire."}},
+    {"@type": "Question", "name": "Combien de temps faut-il pour que le message apparaisse ?", "acceptedAnswer": {"@type": "Answer", "text": "En général, le message commence à apparaître après 1h30 à 2h de combustion."}},
+    {"@type": "Question", "name": "Puis-je écrire mon propre message ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Vous pouvez écrire jusqu'à 32 caractères. Le prix est de 300 DHS."}},
+    {"@type": "Question", "name": "Quels sont les délais de livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "La livraison est offerte partout au Maroc. Comptez 2 à 4 jours ouvrés."}},
+    {"@type": "Question", "name": "Puis-je envoyer la bougie directement à quelqu'un ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Cochez la case 'C'est un cadeau' lors de la commande."}},
+    {"@type": "Question", "name": "La bougie est-elle emballée comme un cadeau ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Chaque commande est emballée avec un ruban, une étiquette cadeau et une petite carte."}},
+    {"@type": "Question", "name": "Que faire si la bougie arrive endommagée ?", "acceptedAnswer": {"@type": "Answer", "text": "Écrivez-nous avec une photo et nous vous renvoyons une nouvelle bougie sans frais."}},
+    {"@type": "Question", "name": "Livrez-vous en dehors du Maroc ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour le moment, nous livrons uniquement au Maroc."}}
   ]
 }
 </script>
-
 </body>
 </html>
