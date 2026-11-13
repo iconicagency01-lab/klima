@@ -142,8 +142,8 @@ a{color:inherit;text-decoration:none}
 .payment-note{font-size:.75rem;color:var(--ink-soft);text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;}
 .payment-note svg{width:14px;height:14px;color:var(--ink);}
 
-/* Custom Message Box */
-.custom-message-box{background:var(--pink-light);border:1px solid var(--pink);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:8px;}
+/* Custom Message Box (Visual) */
+.custom-message-box{background:var(--pink-light);border:1px solid var(--pink);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:8px;display:none;}
 .custom-message-box span{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:8px;}
 .custom-message-box strong{font-family:var(--display);font-size:1.2rem;font-weight:500;color:var(--ink);word-break:break-word;}
 
@@ -211,9 +211,10 @@ a{color:inherit;text-decoration:none}
       <div class="product-price" id="productPrice">0 DHS</div>
       <p class="lead" id="productDesc"></p>
 
-      <div class="custom-message-box" id="customMessageBox" style="display:none;">
+      <!-- Visual Custom Message Box (Updates live) -->
+      <div class="custom-message-box" id="customMessageBox">
         <span>Votre message caché</span>
-        <strong id="customMessageText"></strong>
+        <strong id="customMessageText">Écrivez ci-dessous...</strong>
       </div>
 
       <div class="mechanism-box">
@@ -230,6 +231,13 @@ a{color:inherit;text-decoration:none}
 
       <form class="checkout-form" id="orderForm" onsubmit="handleOrder(event)">
         <h3>Commander</h3>
+        
+        <!-- INPUT FIELD FOR CUSTOM MESSAGE (Only for Votre Message) -->
+        <div class="form-group" id="customMessageInputGroup" style="display:none;">
+          <label for="customInputProduct">Votre message caché (Lettres et chiffres uniquement, 32 max) *</label>
+          <input type="text" id="customInputProduct" name="customMessage" maxlength="32" placeholder="Ex: JE T'AIME" required />
+        </div>
+
         <div class="form-group">
           <label for="name">Votre nom complet *</label>
           <input type="text" id="name" name="name" required placeholder="Ex: Sarah Bennani" />
@@ -382,7 +390,7 @@ const PRODUCTS = {
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id') || 'you-are-my-soulmate';
-const customMessage = params.get('msg') || '';
+let customMessage = params.get('msg') || ''; 
 const product = PRODUCTS[productId];
 
 if (product) {
@@ -392,13 +400,45 @@ if (product) {
   document.getElementById('productBreadcrumb').textContent = product.name;
   document.getElementById('productPrice').textContent = product.price + ' DHS';
   
-  if (customMessage && productId === 'votre-message') {
+  if (productId === 'votre-message') {
+    // Show the visual message box
     document.getElementById('customMessageBox').style.display = 'block';
-    document.getElementById('customMessageText').textContent = '« ' + customMessage + ' »';
     document.getElementById('productDesc').textContent = 'Votre message personnalisé sera coulé au coeur de la bougie.';
+    
+    // Show the input field in the form
+    const inputGroup = document.getElementById('customMessageInputGroup');
+    inputGroup.style.display = 'flex';
+    const customInput = document.getElementById('customInputProduct');
+    
+    // Pre-fill if came from homepage builder
+    if (customMessage) {
+      customInput.value = customMessage;
+      document.getElementById('customMessageText').textContent = '« ' + customMessage + ' »';
+    }
+    
+    // Live update visual box + enforce strict characters
+    customInput.addEventListener('input', (e) => {
+      // Strip accents and special characters, enforce uppercase
+      let val = e.target.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().replace(/[^A-Z0-9 ]/g, '');
+      e.target.value = val;
+      
+      if (val.trim()) {
+        document.getElementById('customMessageText').textContent = '« ' + val + ' »';
+      } else {
+        document.getElementById('customMessageText').textContent = 'Écrivez ci-dessous...';
+      }
+    });
+
+    // Prevent typing special characters
+    customInput.addEventListener('keydown', (e) => {
+      if (e.key === ' ') return;
+      if (e.key.length === 1 && !/[a-zA-Z0-9]/.test(e.key)) e.preventDefault();
+    });
+    
   } else {
     document.getElementById('productDesc').textContent = product.desc;
   }
+  
   document.title = 'KLIMA — ' + product.name;
 
   if (typeof fbq === 'function') {
@@ -438,12 +478,21 @@ function handleOrder(e) {
 
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
+  
   data.productName = product.name;
   data.productPrice = product.price;
   data.quantity = currentQty;
   data.totalPrice = product.price * currentQty;
   data.isGift = isGift;
-  if (customMessage && productId === 'votre-message') data.customMessage = customMessage;
+  
+  if (productId === 'votre-message') {
+    const customInput = document.getElementById('customInputProduct');
+    if (!customInput.value.trim()) {
+      customInput.reportValidity();
+      return;
+    }
+    data.customMessage = customInput.value.trim();
+  }
 
   submitBtn.textContent = 'Envoi en cours…';
   submitBtn.disabled = true;
