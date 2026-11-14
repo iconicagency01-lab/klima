@@ -57,7 +57,7 @@ a{color:inherit;text-decoration:none}
 .section-head{margin-bottom:clamp(24px,6vw,64px)}
 .section-head .h2{margin-top:12px}
 
-/* HEADER - White over hero, switches on scroll */
+/* HEADER */
 .header{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;border-bottom:1px solid transparent;transition:background .4s, border-color .4s, backdrop-filter .4s;}
 .header.is-scrolled{background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom-color:var(--line);}
 .header.is-scrolled .logo img { filter: none; }
@@ -88,7 +88,7 @@ a{color:inherit;text-decoration:none}
 .mobile-nav a{font-family:var(--display);font-weight:400;font-size:2rem;letter-spacing:-.02em;padding-block:20px;border-bottom:1px solid var(--line);}
 .mobile-nav__close{position:absolute;top:16px;right:16px}
 
-/* FULL BLEED HERO - White text */
+/* FULL BLEED HERO */
 .hero{position:relative;height:100svh;min-height:600px;width:100%;display:flex;align-items:center;overflow:hidden;padding-top:72px;}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right bottom;z-index:0;}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(20,15,12,0.55) 0%, rgba(20,15,12,0.3) 40%, rgba(20,15,12,0) 60%);z-index:1;}
@@ -105,13 +105,13 @@ a{color:inherit;text-decoration:none}
   .hero__actions{flex-direction:column;gap:12px;}
 }
 
-/* REVEAL */
-.reveal-section{background:var(--paper);border-block:1px solid var(--line)}
-.reveal__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,8vw,100px);align-items:center;}
-.reveal__visual{border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1.05;background:var(--pink-light);}
-.reveal__visual img{width:100%;height:100%;object-fit:cover}
-.reveal__copy{display:flex;flex-direction:column;gap:24px}
-@media(max-width:900px){.reveal__grid{grid-template-columns:1fr;gap:32px}}
+/* EMOTIONAL STORY SECTION - No CTA button */
+.story-section{background:var(--paper);border-block:1px solid var(--line);}
+.story__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,8vw,100px);align-items:center;}
+.story__visual{border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1.05;background:var(--pink-light);}
+.story__visual img{width:100%;height:100%;object-fit:cover}
+.story__copy{display:flex;flex-direction:column;gap:24px}
+@media(max-width:900px){.story__grid{grid-template-columns:1fr;gap:32px}}
 
 /* COLLECTION */
 .collection__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px);}
@@ -205,20 +205,19 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="index.html" class="logo" aria-label="KLIMA accueil">
       <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="index.html#collection">Boutique</a>
-      <a href="index.html#custom">Votre message</a>
+      <a href="collection.html">Boutique</a>
+      <a href="#custom">Votre message</a>
       <a href="faq.html">FAQ</a>
     </nav>
     <div class="header__actions">
       <a href="#custom" class="icon-btn" aria-label="Créer un message">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18" opacity=".3"/><path d="M12 2 14.4 9.6 22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
       </a>
       <button class="icon-btn burger" id="burger" aria-label="Ouvrir le menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
@@ -231,8 +230,8 @@ a{color:inherit;text-decoration:none}
   <button class="icon-btn mobile-nav__close" id="closeNav" aria-label="Fermer le menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
-  <a href="index.html#collection">Boutique</a>
-  <a href="index.html#custom">Votre message</a>
+  <a href="collection.html">Boutique</a>
+  <a href="#custom">Votre message</a>
   <a href="faq.html">FAQ</a>
 </div>
 
@@ -255,31 +254,30 @@ a{color:inherit;text-decoration:none}
         Écrire votre message
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="#collection" class="btn" style="background:rgba(255,255,255,0.15); color:#fff; backdrop-filter:blur(4px);">
+      <a href="collection.html" class="btn" style="background:rgba(255,255,255,0.15); color:#fff; backdrop-filter:blur(4px);">
         Voir les messages
       </a>
     </div>
   </div>
 </section>
 
-<!-- THE REVEAL -->
-<section class="section reveal-section" id="reveal">
-  <div class="container reveal__grid">
-    <div class="reveal__visual reveal">
-      <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg" alt="Les perles du message caché" />
+<!-- EMOTIONAL STORY SECTION (No CTA button) -->
+<section class="section story-section" id="reveal">
+  <div class="container story__grid">
+    <div class="story__visual reveal">
+      <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg" alt="Le moment de la révélation" />
     </div>
-    <div class="reveal__copy">
-      <span class="eyebrow reveal">Le secret</span>
+    <div class="story__copy">
+      <span class="eyebrow reveal">Le cadeau parfait</span>
       <h2 class="h-display h2 reveal">
-        Petites perles.<br>Grands mots.
+        Il y a des mots<br>qui méritent mieux<br>qu'un message.
       </h2>
       <p class="lead reveal">
-        Le message n'est pas imprimé à la surface. Il est écrit en minuscules
-        perles blanches aux lettres noires, posées à même la cire.
-        Au fil de la combustion, elles se révèlent — une perle à la fois.
+        Un mot d'amour. Un remerciement. Une blague entre vous.
+        Ce que vous n'osez pas dire à voix haute, offrez-le en secret.
       </p>
       <p class="lead reveal" style="margin-top:-8px;font-size:.92rem;opacity:.75;">
-        Ce qui reste après la flamme est à vous pour toujours.
+        Parce que le plus beau des cadeaux, c'est le moment où l'autre découvre ce que vous avez caché.
       </p>
     </div>
   </div>
@@ -310,9 +308,9 @@ a{color:inherit;text-decoration:none}
       </p>
       <form class="custom__form" action="product.html?id=votre-message" method="GET" onsubmit="return handleCustomBuilder(event)">
         <div class="custom__field">
-          <input id="customInput" type="text" name="msg" maxlength="32" placeholder="Écrivez ce que vous voulez cacher…" autocomplete="off" />
+          <input id="customInput" type="text" name="msg" maxlength="32" placeholder="Écrivez votre message ici" autocomplete="off" />
         </div>
-        <div class="custom__helper" id="lineHelper">Lettres et chiffres uniquement · 32 caractères max</div>
+        <div class="custom__helper" id="lineHelper">Lettres et chiffres uniquement · Sans accents ni symboles · 32 max</div>
         <button type="submit" class="btn btn--pink custom__submit btn--large">
           Créer cette bougie · 300 DHS
         </button>
@@ -366,7 +364,6 @@ a{color:inherit;text-decoration:none}
 
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
@@ -381,8 +378,8 @@ a{color:inherit;text-decoration:none}
       <div>
         <h4>Boutique</h4>
         <ul>
-          <li><a href="index.html#collection">Toutes les bougies</a></li>
-          <li><a href="index.html#custom">Votre message</a></li>
+          <li><a href="collection.html">Toutes les bougies</a></li>
+          <li><a href="#custom">Votre message</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
@@ -540,7 +537,7 @@ function renderBeads(text) {
 
 function updateHelper(usedLines, text) {
   lineHelper.classList.remove('is-tight');
-  if (usedLines === 0) { lineHelper.textContent = 'Lettres et chiffres uniquement · 32 caractères max'; return; }
+  if (usedLines === 0) { lineHelper.textContent = 'Lettres et chiffres uniquement · Sans accents ni symboles · 32 max'; return; }
   const lastLen = usedLines > 0 ? packWords(text)[usedLines-1].length : 0;
   const emptyOnCur = 8 - lastLen;
   const emptyLines = 4 - usedLines;
