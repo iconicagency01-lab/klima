@@ -192,26 +192,12 @@ a{color:inherit;text-decoration:none}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 
-/* Scent mention */
-.scent-mention{
-  font-size:.85rem;color:var(--muted);font-style:italic;margin-top:4px;
-}
+.scent-mention{font-size:.85rem;color:var(--muted);font-style:italic;margin-top:4px;}
 
-/* WhatsApp */
-.wa-float {
-  position: fixed; bottom: 24px; right: 20px; z-index: 85;
-  width: 52px; height: 52px; border-radius: 50%;
-  background: #25D366; display: grid; place-items: center;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-  transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;
-  text-decoration: none;
-}
-.wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55); }
-.wa-float svg { width: 26px; height: 26px; color: #fff; fill: #fff; }
-@media(max-width: 600px) {
-  .wa-float { bottom: 20px; right: 16px; width: 48px; height: 48px; }
-  .wa-float svg { width: 24px; height: 24px; }
-}
+.wa-float {position: fixed;bottom: 24px;right: 20px;z-index: 85;width: 52px;height: 52px;border-radius: 50%;background: #25D366;display: grid;place-items: center;box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;text-decoration: none;}
+.wa-float:hover {transform: scale(1.08);box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);}
+.wa-float svg {width: 26px;height: 26px;color: #fff;fill: #fff;}
+@media(max-width: 600px) {.wa-float {bottom: 20px;right: 16px;width: 48px;height: 48px;}.wa-float svg {width: 24px;height: 24px;}}
 </style>
 </head>
 <body>
@@ -418,14 +404,8 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
-<a
-  href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question."
-  target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp"
->
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/>
-    <path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/>
-  </svg>
+<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
 </a>
 
 <script>
@@ -446,8 +426,10 @@ const PRODUCTS = [
 const grid = document.getElementById('grid');
 grid.innerHTML = PRODUCTS.map(p => {
   const isCustom = p.id === 'le-secret';
+  const linkUrl = isCustom ? 'le-secret.html' : `product.html?id=${p.id}`;
+  
   return `
-  <a href="product.html?id=${p.id === 'le-secret' ? 'le-secret' : p.id}" class="pcard reveal">
+  <a href="${linkUrl}" class="pcard reveal">
     <div class="pcard__media">
       ${isCustom ? '<span class="pcard__badge">Le plus offert</span>' : ''}
       <img src="${p.img}" alt="${p.name}" loading="lazy" />
