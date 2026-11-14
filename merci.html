@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Merci — KLIMA</title>
 <meta name="description" content="Merci pour votre commande. Votre bougie KLIMA est en cours de préparation." />
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
@@ -16,19 +16,19 @@
 <style>
 :root{
   --cream:#FCF8F5;--paper:#FFFFFF;--ink:#2A2220;--ink-soft:#6E615C;--muted:#A89C96;
-  --line:#F0E6DF;--line-soft:#F7EFE9;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;
+  --line:#F0E6DF;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;
   --display:'Fraunces', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;
-  --ease:cubic-bezier(.22,.61,.36,1);--max:800px;--radius:12px;
+  --max:800px;--radius:12px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.65;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--pink);color:#fff}
 
 .container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
-.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;}
 .h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;}
 .h-display em{font-style:italic;font-weight:400;color:var(--pink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:500;font-size:.86rem;letter-spacing:.02em;transition:background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);white-space:nowrap;}
@@ -73,6 +73,11 @@ a{color:inherit;text-decoration:none}
 .instagram-cta .btn:hover{background:var(--ink);color:#fff;}
 
 .footer{padding-block:32px;text-align:center;font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);}
+
+.wa-float {position: fixed;bottom: 24px;right: 20px;z-index: 85;width: 52px;height: 52px;border-radius: 50%;background: #25D366;display: grid;place-items: center;box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;text-decoration: none;}
+.wa-float:hover {transform: scale(1.08);box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);}
+.wa-float svg {width: 26px;height: 26px;color: #fff;fill: #fff;}
+@media(max-width: 600px) {.wa-float {bottom: 20px;right: 16px;width: 48px;height: 48px;}.wa-float svg {width: 24px;height: 24px;}}
 </style>
 </head>
 <body>
@@ -89,20 +94,15 @@ a{color:inherit;text-decoration:none}
   </div>
 
   <h1 class="h-display h1">Merci.<br>Votre secret est entre nos mains.</h1>
-  
-  <p class="lead">
-    Nous avons bien reçu votre commande. Chaque bougie est coulée à la main. 
-    Nous vous contacterons très vite sur WhatsApp pour confirmer les détails.
-  </p>
+  <p class="lead">Nous avons bien reçu votre commande. Chaque bougie est coulée à la main. Nous vous contacterons très vite sur WhatsApp pour confirmer les détails.</p>
 
   <div class="receipt" id="receipt" style="display:none;">
-    <h3>Récapitulatif de votre commande</h3>
+    <h3>Récapitulatif</h3>
     <div class="receipt-row"><span>Produit</span><span id="rProduct">—</span></div>
     <div class="receipt-row"><span>Quantité</span><span id="rQty">—</span></div>
     <div class="receipt-row"><span>Livraison</span><span>Offerte</span></div>
     <div class="receipt-divider"></div>
     <div class="receipt-total"><span>Total</span><span id="rTotal">—</span></div>
-
     <div class="gift-note" id="giftNote">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex:none;"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
       <span><strong>Commande cadeau :</strong> Nous vous contacterons sur WhatsApp pour le paiement par virement. Le destinataire ne paiera rien à la livraison.</span>
@@ -112,21 +112,9 @@ a{color:inherit;text-decoration:none}
   <div class="next-steps">
     <h3>La suite des événements</h3>
     <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Confirmation</h4>
-        <p>Nous vérifions votre message et vos coordonnées.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>La coulée</h4>
-        <p>Votre bougie est coulée à la main, avec soin.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>L'expédition</h4>
-        <p>Livraison offerte chez vous sous 3 à 5 jours.</p>
-      </div>
+      <div class="step"><div class="step-num">1</div><h4>Confirmation</h4><p>Nous vérifions votre message et vos coordonnées.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>La coulée</h4><p>Votre bougie est coulée à la main, avec soin.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>L'expédition</h4><p>Livraison offerte chez vous sous 3 à 5 jours.</p></div>
     </div>
   </div>
 
@@ -139,8 +127,12 @@ a{color:inherit;text-decoration:none}
 </main>
 
 <footer class="footer container">
-  © 2026 KLIMA. Tous droits réservés. Coulée à la main au Maroc.
+  © 2026 KLIMA. Tous droits réservés.
 </footer>
+
+<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
 
 <script>
 const lastOrderStr = sessionStorage.getItem('lastOrder');
