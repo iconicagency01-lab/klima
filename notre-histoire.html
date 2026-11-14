@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Notre histoire — KLIMA</title>
 <meta name="description" content="L'histoire de KLIMA : des bougies qui gardent des secrets, coulées à la main au Maroc." />
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
@@ -21,7 +21,7 @@
   --max:1000px;--radius:12px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.65;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -29,18 +29,30 @@ a{color:inherit;text-decoration:none}
 
 .container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
 .section{padding-block:clamp(64px,10vw,120px)}
-.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;}
 .h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;}
 .h2{font-size:clamp(1.8rem,4vw,2.6rem);}
 .h-display em{font-style:italic;font-weight:400;color:var(--pink)}
 .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
 .lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;max-width:52ch;}
 
-.header{padding-block:20px;border-bottom:1px solid var(--line);background:var(--cream);}
-.header__inner{display:flex;justify-content:space-between;align-items:center;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
-.logo img{height:28px;width:auto;}
-.nav a{font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:24px;transition:color .3s;}
+.header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.header__inner{display:flex;justify-content:space-between;align-items:center;gap:16px;height:80px;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
+.logo{flex-shrink:0;}
+.logo img{height:32px;width:auto;}
+.nav{display:flex;gap:32px;}
+.nav a{font-size:.82rem;font-weight:600;color:var(--ink-soft);transition:color .3s;white-space:nowrap;}
 .nav a:hover{color:var(--pink)}
+.header__actions{display:flex;align-items:center;gap:4px;flex-shrink:0;}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;position:relative;transition:background .25s;flex-shrink:0;}
+.icon-btn:hover{background:rgba(0,0,0,0.05)}
+.icon-btn svg{width:20px;height:20px;stroke-width:1.4;}
+
+@media(max-width:900px){
+  .header__inner{height:64px;gap:8px;}
+  .nav{display:none;}
+  .logo img{height:26px;}
+}
 
 .story-section{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center;margin-bottom:64px;}
 @media(max-width:800px){.story-section{grid-template-columns:1fr;gap:32px;}}
@@ -59,9 +71,14 @@ a{color:inherit;text-decoration:none}
 .cta-section .btn:hover{background:var(--ink);}
 
 .footer{padding-block:32px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted);text-align:center;}
-.footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
-.footer__bottom a:hover {color: var(--pink);}
 .footer__bottom-links {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;gap: 12px;}
+.footer__bottom-links a {color: var(--ink-soft);text-decoration: underline;transition: color .2s;}
+.footer__bottom-links a:hover {color: var(--pink);}
+
+.wa-float {position: fixed;bottom: 24px;right: 20px;z-index: 85;width: 52px;height: 52px;border-radius: 50%;background: #25D366;display: grid;place-items: center;box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;text-decoration: none;}
+.wa-float:hover {transform: scale(1.08);box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);}
+.wa-float svg {width: 26px;height: 26px;color: #fff;fill: #fff;}
+@media(max-width: 600px) {.wa-float {bottom: 20px;right: 16px;width: 48px;height: 48px;}.wa-float svg {width: 24px;height: 24px;}}
 </style>
 </head>
 <body>
@@ -72,14 +89,19 @@ a{color:inherit;text-decoration:none}
       <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
     </a>
     <nav class="nav">
-      <a href="index.html">Boutique</a>
+      <a href="collection.html">Boutique</a>
+      <a href="le-secret.html">Le Secret</a>
       <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
     </nav>
+    <div class="header__actions">
+      <a href="le-secret.html" class="icon-btn" aria-label="Créer un message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
+      </a>
+    </div>
   </div>
 </header>
 
-<main class="container section">
+<main class="container section" style="padding-top:120px;">
   <span class="eyebrow">Notre histoire</span>
   <h1 class="h-display h1" style="margin-top:12px;">Nous faisons des bougies<br>qui gardent des secrets.</h1>
 
@@ -88,7 +110,7 @@ a{color:inherit;text-decoration:none}
       <h2 class="h-display h2">Pourquoi KLIMA ?</h2>
       <p>Tout a commencé avec une idée simple : <strong>et si une bougie pouvait porter un message ?</strong></p>
       <p>Pas une carte à côté. Pas un papier posé dessus. Un message vraiment caché, au cœur de la cire, qui n'apparaît qu'au moment où la flamme fait son travail.</p>
-      <p>Nous voulions créer un objet qui ne se contente pas d'être beau. Un objet qui raconte quelque chose. Qui garde un secret. Qui fait sourire, pleurer, ou les deux à la fois.</p>
+      <p>Nous voulions créer un objet qui ne se contente pas d'être beau. Un objet qui raconte quelque chose. Qui garde un secret.</p>
     </div>
     <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg" alt="Bougie KLIMA avec message caché" />
   </div>
@@ -96,8 +118,9 @@ a{color:inherit;text-decoration:none}
   <div class="story-section" style="direction:rtl;">
     <div class="story-text" style="direction:ltr;">
       <h2 class="h-display h2">Faites à la main,<br>au Maroc.</h2>
-      <p>Chaque bougie est coulée à la main dans notre atelier. Le message est écrit perle par perle, vérifié, puis scellé dans la cire. Aucune machine ne fait ce travail. Aucun raccourci n'est pris.</p>
+      <p>Chaque bougie est coulée à la main dans notre atelier. Le message est écrit perle par perle, vérifié, puis scellé dans la cire. Aucune machine ne fait ce travail.</p>
       <p>Le résultat : une bougie qui sent bon, qui brûle longtemps, et qui cache quelque chose que seule la personne à qui vous l'offrez découvrira.</p>
+      <p style="font-style:italic;color:var(--muted);font-size:.9rem;">Parfum signature : fleur d'oranger &amp; ambre boisé.</p>
     </div>
     <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794508413/hero.jpg" alt="Atelier KLIMA" />
   </div>
@@ -122,7 +145,7 @@ a{color:inherit;text-decoration:none}
   <div class="cta-section">
     <h2 class="h-display h2" style="margin-bottom:16px;">Prêt à cacher un mot ?</h2>
     <p style="color:var(--ink-soft);margin-bottom:24px;">Découvrez nos messages prêts à offrir, ou écrivez le vôtre.</p>
-    <a href="index.html#collection" class="btn">Voir la collection</a>
+    <a href="collection.html" class="btn">Voir la collection</a>
   </div>
 </main>
 
@@ -134,5 +157,9 @@ a{color:inherit;text-decoration:none}
     <a href="politique-de-retour.html">Retours</a>
   </div>
 </footer>
+
+<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
 </body>
 </html>
