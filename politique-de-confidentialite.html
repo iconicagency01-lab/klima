@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Politique de Confidentialité — KLIMA</title>
-<meta name="description" content="Politique de confidentialité de KLIMA. Comment nous collectons et protégeons vos données personnelles." />
+<meta name="description" content="Politique de confidentialité de KLIMA." />
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +16,14 @@
 <style>
 :root{--cream:#FCF8F5;--paper:#FFFFFF;--ink:#2A2220;--ink-soft:#6E615C;--muted:#A89C96;--line:#F0E6DF;--pink:#FC6E8E;--pink-light:#FFD1DC;--pink-dark:#D94E6A;--display:'Fraunces',Georgia,serif;--body:'DM Sans',system-ui,sans-serif;--max:900px;--radius:12px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.65;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.7;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--pink);color:#fff}
 .container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
 .section{padding-block:clamp(64px,10vw,100px)}
-.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;}
 .h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;}
 .h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-top:40px;margin-bottom:16px;}
 .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
@@ -34,15 +34,34 @@ ul li{margin-bottom:6px;}
 strong{color:var(--ink);font-weight:600;}
 a.link{color:var(--pink-dark);text-decoration:underline;}
 a.link:hover{color:var(--ink);}
-.header{padding-block:20px;border-bottom:1px solid var(--line);background:var(--cream);}
-.header__inner{display:flex;justify-content:space-between;align-items:center;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
-.logo img{height:28px;width:auto;}
-.nav a{font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:24px;transition:color .3s;}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.header__inner{display:flex;justify-content:space-between;align-items:center;gap:16px;height:80px;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
+.logo{flex-shrink:0;}
+.logo img{height:32px;width:auto;}
+.nav{display:flex;gap:32px;}
+.nav a{font-size:.82rem;font-weight:600;color:var(--ink-soft);transition:color .3s;white-space:nowrap;}
 .nav a:hover{color:var(--pink)}
+.header__actions{display:flex;align-items:center;gap:4px;flex-shrink:0;}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;position:relative;transition:background .25s;flex-shrink:0;}
+.icon-btn:hover{background:rgba(0,0,0,0.05)}
+.icon-btn svg{width:20px;height:20px;stroke-width:1.4;}
+
+@media(max-width:900px){
+  .header__inner{height:64px;gap:8px;}
+  .nav{display:none;}
+  .logo img{height:26px;}
+}
+
 .footer{padding-block:32px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted);text-align:center;}
-.footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
-.footer__bottom a:hover {color: var(--pink);}
 .footer__bottom-links {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;gap: 12px;}
+.footer__bottom-links a {color: var(--ink-soft);text-decoration: underline;transition: color .2s;}
+.footer__bottom-links a:hover {color: var(--pink);}
+
+.wa-float {position: fixed;bottom: 24px;right: 20px;z-index: 85;width: 52px;height: 52px;border-radius: 50%;background: #25D366;display: grid;place-items: center;box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;text-decoration: none;}
+.wa-float:hover {transform: scale(1.08);box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);}
+.wa-float svg {width: 26px;height: 26px;color: #fff;fill: #fff;}
+@media(max-width: 600px) {.wa-float {bottom: 20px;right: 16px;width: 48px;height: 48px;}.wa-float svg {width: 24px;height: 24px;}}
 </style>
 </head>
 <body>
@@ -53,80 +72,49 @@ a.link:hover{color:var(--ink);}
       <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
     </a>
     <nav class="nav">
-      <a href="index.html">Boutique</a>
+      <a href="collection.html">Boutique</a>
+      <a href="le-secret.html">Le Secret</a>
       <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
     </nav>
+    <div class="header__actions">
+      <a href="le-secret.html" class="icon-btn" aria-label="Créer un message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
+      </a>
+    </div>
   </div>
 </header>
 
-<main class="container section">
+<main class="container section" style="padding-top:120px;">
   <span class="eyebrow">Mentions légales</span>
   <h1 class="h-display h1" style="margin-top:12px;">Politique de Confidentialité</h1>
   <p class="lead" style="margin-top:16px;">Dernière mise à jour : Novembre 2026.</p>
 
-  <p>Chez <strong>KLIMA</strong>, nous prenons la protection de vos données personnelles très au sérieux. Cette politique explique quelles données nous collectons, pourquoi nous les collectons, comment nous les utilisons et quels sont vos droits, conformément à la <strong>loi n° 09-08</strong> relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel.</p>
+  <p>Chez <strong>KLIMA</strong>, nous prenons la protection de vos données personnelles très au sérieux. Cette politique explique quelles données nous collectons, pourquoi nous les collectons, comment nous les utilisons et quels sont vos droits, conformément à la <strong>loi n° 09-08</strong>.</p>
 
   <h2 class="h-display h2">1. Responsable du traitement</h2>
   <p>Le responsable du traitement des données est <strong>KLIMA</strong>, dont le siège est situé au Maroc.</p>
-  <p>Pour toute question relative à vos données personnelles, vous pouvez nous contacter à : <a href="mailto:contact@klimabougies.com" class="link">contact@klimabougies.com</a>.</p>
+  <p>Pour toute question relative à vos données personnelles : <a href="mailto:contact@klimabougies.com" class="link">contact@klimabougies.com</a>.</p>
 
   <h2 class="h-display h2">2. Données que nous collectons</h2>
-  <p>Nous collectons uniquement les données nécessaires pour traiter votre commande et vous livrer :</p>
+  <p>Nous collectons uniquement les données nécessaires pour traiter votre commande :</p>
   <ul>
     <li><strong>Données d'identification :</strong> nom complet, numéro de téléphone.</li>
     <li><strong>Données de livraison :</strong> adresse postale, ville.</li>
-    <li><strong>Données de commande :</strong> produit commandé, quantité, message personnalisé (le cas échéant).</li>
-    <li><strong>Données de paiement :</strong> nous ne collectons <strong>aucune donnée bancaire</strong>. Le paiement se fait à la livraison (espèces) ou par virement bancaire organisé via WhatsApp.</li>
+    <li><strong>Données de commande :</strong> produit, quantité, message personnalisé.</li>
+    <li><strong>Données de paiement :</strong> aucune donnée bancaire. Le paiement se fait à la livraison ou par virement.</li>
   </ul>
 
   <h2 class="h-display h2">3. Finalités du traitement</h2>
-  <p>Vos données sont utilisées pour :</p>
-  <ul>
-    <li>Traiter et confirmer votre commande.</li>
-    <li>Organiser la livraison du produit.</li>
-    <li>Vous contacter concernant votre commande (par téléphone ou WhatsApp).</li>
-    <li>Répondre à vos demandes via le formulaire de contact.</li>
-    <li>Améliorer nos services et notre communication (statistiques anonymes).</li>
-  </ul>
+  <p>Vos données sont utilisées pour traiter votre commande, organiser la livraison, vous contacter concernant votre commande, et répondre à vos demandes via le formulaire de contact.</p>
 
-  <h2 class="h-display h2">4. Base légale du traitement</h2>
-  <p>Le traitement de vos données est fondé sur :</p>
-  <ul>
-    <li><strong>L'exécution du contrat :</strong> pour traiter et livrer votre commande.</li>
-    <li><strong>Votre consentement :</strong> lorsque vous remplissez le formulaire de contact.</li>
-    <li><strong>Notre intérêt légitime :</strong> pour améliorer nos services et prévenir la fraude.</li>
-  </ul>
+  <h2 class="h-display h2">4. Vos droits</h2>
+  <p>Conformément à la loi n° 09-08, vous disposez des droits d'accès, de rectification, d'opposition et de suppression. Pour exercer ces droits, écrivez-nous à <a href="mailto:contact@klimabougies.com" class="link">contact@klimabougies.com</a>.</p>
+  <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNDP</strong>.</p>
 
-  <h2 class="h-display h2">5. Destinataires des données</h2>
-  <p>Vos données sont strictement confidentielles. Elles ne sont jamais vendues, louées ou échangées. Elles peuvent être partagées uniquement avec :</p>
-  <ul>
-    <li>Les services de livraison, pour acheminer votre colis.</li>
-    <li>Les prestataires techniques (hébergement, emailing) qui agissent sous notre responsabilité et respectent la confidentialité.</li>
-    <li>Les autorités compétentes, si la loi l'exige.</li>
-  </ul>
+  <h2 class="h-display h2">5. Cookies</h2>
+  <p>Notre site utilise des cookies techniques nécessaires à son fonctionnement et des cookies de mesure d'audience (Meta Pixel). Vous pouvez configurer votre navigateur pour refuser les cookies.</p>
 
-  <h2 class="h-display h2">6. Durée de conservation</h2>
-  <p>Vos données sont conservées le temps nécessaire au traitement de votre commande et au respect de nos obligations légales, puis supprimées ou anonymisées.</p>
-
-  <h2 class="h-display h2">7. Vos droits</h2>
-  <p>Conformément à la loi n° 09-08, vous disposez des droits suivants :</p>
-  <ul>
-    <li><strong>Droit d'accès :</strong> savoir quelles données nous détenons sur vous.</li>
-    <li><strong>Droit de rectification :</strong> corriger des données inexactes.</li>
-    <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données pour des motifs légitimes.</li>
-    <li><strong>Droit à la suppression :</strong> demander l'effacement de vos données, dans les limites légales.</li>
-  </ul>
-  <p>Pour exercer ces droits, écrivez-nous à <a href="mailto:contact@klimabougies.com" class="link">contact@klimabougies.com</a>.</p>
-  <p>Vous pouvez également introduire une réclamation auprès de la <strong>Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)</strong>.</p>
-
-  <h2 class="h-display h2">8. Sécurité</h2>
-  <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
-
-  <h2 class="h-display h2">9. Cookies</h2>
-  <p>Notre site peut utiliser des cookies techniques nécessaires à son bon fonctionnement et des cookies de mesure d'audience (Meta Pixel) pour améliorer nos services. Vous pouvez configurer votre navigateur pour refuser les cookies.</p>
-
-  <h2 class="h-display h2">10. Modifications</h2>
+  <h2 class="h-display h2">6. Modifications</h2>
   <p>Nous nous réservons le droit de modifier cette politique à tout moment. La version en vigueur est celle publiée sur cette page.</p>
 </main>
 
@@ -138,5 +126,9 @@ a.link:hover{color:var(--ink);}
     <a href="politique-de-retour.html">Retours</a>
   </div>
 </footer>
+
+<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
 </body>
 </html>
