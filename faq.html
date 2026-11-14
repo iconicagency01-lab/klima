@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FAQ — KLIMA</title>
 <meta name="description" content="Toutes les réponses sur les bougies KLIMA, la livraison, les messages cachés et les commandes cadeaux." />
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/bba7rzw5/image/upload/v1794509168/Logo_nobg.png" />
@@ -21,26 +21,39 @@
   --max:900px;--radius:12px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.65;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
 img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--pink);color:#fff}
 
 .container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
 .section{padding-block:clamp(64px,10vw,100px)}
-.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;font-variation-settings:"opsz" 96;}
+.h-display{font-family:var(--display);font-weight:400;letter-spacing:-.03em;line-height:1.06;}
 .h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;}
 .h2{font-size:clamp(1.8rem,4vw,2.6rem);}
 .h-display em{font-style:italic;font-weight:400;color:var(--pink)}
 .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);line-height:1.6;}
 .lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;max-width:48ch;}
 
-.header{padding-block:20px;border-bottom:1px solid var(--line);background:var(--cream);}
-.header__inner{display:flex;justify-content:space-between;align-items:center;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
-.logo img{height:28px;width:auto;}
-.nav a{font-size:.82rem;font-weight:500;color:var(--ink-soft);margin-left:24px;transition:color .3s;}
+.header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.header__inner{display:flex;justify-content:space-between;align-items:center;gap:16px;height:80px;max-width:var(--max);margin-inline:auto;padding-inline:24px;}
+.logo{flex-shrink:0;}
+.logo img{height:32px;width:auto;}
+.nav{display:flex;gap:32px;}
+.nav a{font-size:.82rem;font-weight:600;color:var(--ink-soft);transition:color .3s;white-space:nowrap;}
 .nav a:hover{color:var(--pink)}
+.header__actions{display:flex;align-items:center;gap:4px;flex-shrink:0;}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;position:relative;transition:background .25s;flex-shrink:0;}
+.icon-btn:hover{background:rgba(0,0,0,0.05)}
+.icon-btn svg{width:20px;height:20px;stroke-width:1.4;}
+
+@media(max-width:900px){
+  .header__inner{height:64px;gap:8px;}
+  .nav{display:none;}
+  .logo img{height:26px;}
+}
 
 .faq-list{display:flex;flex-direction:column;gap:8px;margin-top:32px;}
 .faq-item{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);overflow:hidden;}
@@ -51,9 +64,14 @@ a{color:inherit;text-decoration:none}
 .faq-item p{padding:0 24px 20px;font-size:.92rem;color:var(--ink-soft);line-height:1.65;}
 
 .footer{padding-block:32px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted);text-align:center;}
-.footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
-.footer__bottom a:hover {color: var(--pink);}
 .footer__bottom-links {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;gap: 12px;}
+.footer__bottom-links a {color: var(--ink-soft);text-decoration: underline;transition: color .2s;}
+.footer__bottom-links a:hover {color: var(--pink);}
+
+.wa-float {position: fixed;bottom: 24px;right: 20px;z-index: 85;width: 52px;height: 52px;border-radius: 50%;background: #25D366;display: grid;place-items: center;box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;text-decoration: none;}
+.wa-float:hover {transform: scale(1.08);box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);}
+.wa-float svg {width: 26px;height: 26px;color: #fff;fill: #fff;}
+@media(max-width: 600px) {.wa-float {bottom: 20px;right: 16px;width: 48px;height: 48px;}.wa-float svg {width: 24px;height: 24px;}}
 </style>
 </head>
 <body>
@@ -64,14 +82,19 @@ a{color:inherit;text-decoration:none}
       <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
     </a>
     <nav class="nav">
-      <a href="index.html">Boutique</a>
-      <a href="notre-histoire.html">Notre histoire</a>
-      <a href="contact.html">Contact</a>
+      <a href="collection.html">Boutique</a>
+      <a href="le-secret.html">Le Secret</a>
+      <a href="faq.html">FAQ</a>
     </nav>
+    <div class="header__actions">
+      <a href="le-secret.html" class="icon-btn" aria-label="Créer un message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
+      </a>
+    </div>
   </div>
 </header>
 
-<main class="container section">
+<main class="container section" style="padding-top:120px;">
   <span class="eyebrow">Questions fréquentes</span>
   <h1 class="h-display h1" style="margin-top:12px;">Tout ce qu'il faut savoir.</h1>
   <p class="lead" style="margin-top:16px;">Les réponses aux questions que vous vous posez avant de commander. Si vous ne trouvez pas, écrivez-nous.</p>
@@ -79,35 +102,35 @@ a{color:inherit;text-decoration:none}
   <div class="faq-list">
     <details class="faq-item">
       <summary>Comment fonctionne le message caché ?</summary>
-      <p>Le message est écrit avec de minuscules perles blanches aux lettres noires. Il est placé au cœur de la cire, sous la surface. Au fil de la combustion, les perles se révèlent progressivement. Ce n'est ni un papier, ni une carte : le message fait partie de la bougie elle-même.</p>
+      <p>Le message est écrit avec de minuscules perles blanches aux lettres noires. Il est placé au cœur de la cire, sous la surface. Au fil de la combustion, les perles se révèlent progressivement.</p>
     </details>
     <details class="faq-item">
       <summary>Combien de temps faut-il pour que le message apparaisse ?</summary>
-      <p>En général, le message commence à apparaître après <strong>1h30 à 2h</strong> de combustion. Nous recommandons de brûler la bougie par sessions de 2 à 3 heures pour une révélation progressive et sécurisée.</p>
+      <p>En général, le message commence à apparaître après <strong>1h30 à 2h</strong> de combustion. Nous recommandons de brûler la bougie par sessions de 2 à 3 heures.</p>
     </details>
     <details class="faq-item">
       <summary>Puis-je écrire mon propre message ?</summary>
-      <p>Oui. La bougie "Votre Message" vous permet d'écrire jusqu'à 32 caractères (lettres et chiffres uniquement, pas de caractères spéciaux). Nous le relisons avant de couler la bougie. Le prix est de 300 DHS.</p>
+      <p>Oui. La bougie "Le Secret" vous permet d'écrire jusqu'à 32 caractères (lettres et chiffres uniquement). Nous le relisons avant de couler la bougie. Le prix est de 300 DHS.</p>
     </details>
     <details class="faq-item">
       <summary>Quels sont les délais de livraison ?</summary>
-      <p>La livraison est <strong>offerte partout au Maroc</strong>. Comptez 2 à 4 jours ouvrés pour les grandes villes (Casablanca, Rabat, Marrakech, Agadir) et 3 à 5 jours pour les autres régions. Les commandes personnalisées peuvent prendre 1 à 2 jours supplémentaires car chaque bougie est coulée à la main.</p>
+      <p>La livraison est <strong>offerte partout au Maroc</strong>. Comptez 2 à 4 jours ouvrés pour les grandes villes et 3 à 5 jours pour les autres régions.</p>
     </details>
     <details class="faq-item">
       <summary>Puis-je envoyer la bougie directement à quelqu'un ?</summary>
-      <p>Oui. Lors de la commande, cochez la case <strong>"C'est un cadeau"</strong>. Vous pourrez alors renseigner le nom, le téléphone et l'adresse de la personne. Comme le destinataire ne doit pas payer à la livraison, nous vous contacterons sur WhatsApp pour organiser un <strong>paiement par virement</strong> avant l'expédition.</p>
+      <p>Oui. Lors de la commande, cochez la case <strong>"C'est un cadeau"</strong>. Nous vous contacterons sur WhatsApp pour organiser un <strong>paiement par virement</strong> avant l'expédition.</p>
     </details>
     <details class="faq-item">
       <summary>La bougie est-elle emballée comme un cadeau ?</summary>
-      <p>Oui. Chaque commande est emballée avec un ruban, une étiquette cadeau et une petite carte. Elle arrive prête à être offerte, sans que vous ayez à ajouter quoi que ce soit.</p>
+      <p>Oui. Chaque commande est emballée avec un ruban, une étiquette cadeau et une petite carte.</p>
     </details>
     <details class="faq-item">
       <summary>Que faire si la bougie arrive endommagée ?</summary>
-      <p>Écrivez-nous à <a href="mailto:contact@klimabougies.com" style="color:var(--pink);">contact@klimabougies.com</a> ou sur WhatsApp avec une photo. Nous vous renvoyons une nouvelle bougie sans frais. Nous coulons chaque bougie à la main, mais nous nous engageons à ce que vous receviez un produit parfait.</p>
+      <p>Écrivez-nous à <a href="mailto:contact@klimabougies.com" style="color:var(--pink);text-decoration:underline;">contact@klimabougies.com</a> avec une photo. Nous vous renvoyons une nouvelle bougie sans frais.</p>
     </details>
     <details class="faq-item">
       <summary>Livrez-vous en dehors du Maroc ?</summary>
-      <p>Pour le moment, nous livrons uniquement au Maroc. Nous travaillons à étendre la livraison à l'international. Inscrivez-vous à notre liste WhatsApp pour être informé du lancement.</p>
+      <p>Pour le moment, nous livrons uniquement au Maroc. Inscrivez-vous à notre liste WhatsApp pour être informé du lancement.</p>
     </details>
   </div>
 </main>
@@ -121,6 +144,10 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
+<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -129,11 +156,7 @@ a{color:inherit;text-decoration:none}
     {"@type": "Question", "name": "Comment fonctionne le message caché ?", "acceptedAnswer": {"@type": "Answer", "text": "Le message est écrit avec de minuscules perles blanches aux lettres noires. Il est placé au cœur de la cire."}},
     {"@type": "Question", "name": "Combien de temps faut-il pour que le message apparaisse ?", "acceptedAnswer": {"@type": "Answer", "text": "En général, le message commence à apparaître après 1h30 à 2h de combustion."}},
     {"@type": "Question", "name": "Puis-je écrire mon propre message ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Vous pouvez écrire jusqu'à 32 caractères. Le prix est de 300 DHS."}},
-    {"@type": "Question", "name": "Quels sont les délais de livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "La livraison est offerte partout au Maroc. Comptez 2 à 4 jours ouvrés."}},
-    {"@type": "Question", "name": "Puis-je envoyer la bougie directement à quelqu'un ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Cochez la case 'C'est un cadeau' lors de la commande."}},
-    {"@type": "Question", "name": "La bougie est-elle emballée comme un cadeau ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Chaque commande est emballée avec un ruban, une étiquette cadeau et une petite carte."}},
-    {"@type": "Question", "name": "Que faire si la bougie arrive endommagée ?", "acceptedAnswer": {"@type": "Answer", "text": "Écrivez-nous avec une photo et nous vous renvoyons une nouvelle bougie sans frais."}},
-    {"@type": "Question", "name": "Livrez-vous en dehors du Maroc ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour le moment, nous livrons uniquement au Maroc."}}
+    {"@type": "Question", "name": "Quels sont les délais de livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "La livraison est offerte partout au Maroc. Comptez 2 à 4 jours ouvrés."}}
   ]
 }
 </script>
