@@ -25,9 +25,6 @@
   --ease:cubic-bezier(.22,.61,.36,1);--max:1300px;--radius:12px;
 }
 
-/* ============================================================
-   CRITICAL FIX: Lock horizontal overflow on html AND body
-   ============================================================ */
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.7;font-size:17px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
 
@@ -55,9 +52,6 @@ a{color:inherit;text-decoration:none}
 .btn--pink:hover{background:var(--ink);color:var(--cream)}
 .btn--large{padding:20px 48px;font-size:1rem}
 
-/* ============================================================
-   HEADER — With mobile media query (was missing before)
-   ============================================================ */
 .header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
 .header__inner{display:flex;justify-content:space-between;align-items:center;gap:16px;height:80px;}
 .logo{flex-shrink:0;}
@@ -70,18 +64,14 @@ a{color:inherit;text-decoration:none}
 .icon-btn:hover{background:rgba(0,0,0,0.05)}
 .icon-btn svg{width:20px;height:20px;stroke-width:1.4;}
 
-/* MOBILE HEADER FIX: Hide the nav so it can't force overflow */
 @media(max-width:900px){
   .header__inner{height:64px;gap:8px;}
   .nav{display:none;}
   .logo img{height:26px;}
 }
 
-/* ============================================================
-   PRODUCT LAYOUT
-   ============================================================ */
-.product-layout{display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(48px,8vw,100px);align-items:start;padding-top:32px;}
-@media(max-width:900px){ .product-layout{grid-template-columns:1fr;gap:40px;} }
+.product-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;padding-top:24px;}
+@media(max-width:900px){ .product-layout{grid-template-columns:1fr;gap:32px;} }
 
 .product-image{
   border-radius:var(--radius);
@@ -107,14 +97,18 @@ a{color:inherit;text-decoration:none}
 .product-title{font-size:clamp(2rem,4vw,3rem);line-height:1.1;word-break:break-word;}
 .product-price{font-family:var(--display);font-size:1.5rem;color:var(--ink);font-weight:400;}
 
+/* Scent block */
+.scent-block{
+  font-size:.9rem;color:var(--ink-soft);line-height:1.6;
+  padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;
+}
+.scent-block strong{color:var(--ink);font-weight:600;}
+
 .mechanism-box{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:16px;margin-top:8px;}
 .mechanism-box h4{font-family:var(--display);font-size:1.1rem;font-weight:400;}
 .mechanism-box p{font-size:.9rem;color:var(--ink-soft);line-height:1.7;display:flex;align-items:flex-start;gap:12px;}
 .mechanism-box svg{width:20px;height:20px;flex:none;color:var(--pink);margin-top:2px;}
 
-/* ============================================================
-   ACTION ROW — Fixed for mobile (stacks vertically)
-   ============================================================ */
 .action-row{display:flex;gap:16px;margin-top:16px;align-items:stretch;}
 .qty-selector{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--paper);overflow:hidden;min-width:120px;flex-shrink:0;}
 .qty-selector button{width:44px;height:100%;display:grid;place-items:center;font-size:1.3rem;color:var(--ink-soft);transition:background .2s;}
@@ -122,7 +116,6 @@ a{color:inherit;text-decoration:none}
 .qty-selector span{width:32px;text-align:center;font-weight:500;font-size:1rem;}
 .action-row .btn{flex:1;min-width:0;}
 
-/* MOBILE FIX: Stack qty selector and button vertically */
 @media(max-width:600px){
   .action-row{flex-direction:column;gap:12px;align-items:stretch;}
   .qty-selector{width:100%;justify-content:center;min-width:0;}
@@ -150,24 +143,6 @@ a{color:inherit;text-decoration:none}
 .payment-note{font-size:.8rem;color:var(--ink-soft);text-align:center;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
 .payment-note svg{width:16px;height:16px;color:var(--ink);flex-shrink:0;}
 
-.custom-builder-card{
-  background:var(--paper);
-  border: 1px solid var(--pink);
-  border-radius: var(--radius);
-  padding: 24px;
-  margin-bottom: 16px;
-  display: none;
-  flex-direction: column;
-  gap: 16px;
-}
-.custom-builder-card .eyebrow{color:var(--pink-dark);}
-.custom-builder-card h3{font-family:var(--display);font-size:1.2rem;font-weight:400;}
-.custom-builder-card .custom__field{display:flex;align-items:center;gap:12px;border-bottom:1.5px solid var(--line);padding:12px 0;transition:border-color .3s;}
-.custom-builder-card .custom__field:focus-within{border-color:var(--pink)}
-.custom-builder-card .custom__field input{flex:1;background:none;border:0;outline:0;color:var(--ink);font-size:16px;min-width:0;}
-.custom-builder-card .custom__helper{font-size:.75rem;color:var(--muted);padding-left:2px;margin-top:-4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-.custom-builder-card .custom__helper.is-tight{color:var(--pink-dark);font-weight:500;}
-
 .custom-message-box{background:var(--pink-light);border:1px solid var(--pink);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:8px;display:none;}
 .custom-message-box span{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:8px;}
 .custom-message-box strong{font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--ink);word-break:break-word;}
@@ -184,7 +159,6 @@ a{color:inherit;text-decoration:none}
 .faq-item[open] summary::after{content:"−";}
 .faq-item p{font-size:.9rem;color:var(--ink-soft);margin-top:12px;line-height:1.7;}
 
-/* FOOTER */
 .footer{background:var(--cream);padding-block:48px 32px;border-top:1px solid var(--line);margin-top:80px;}
 .footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;}
 @media(max-width:900px){.footer__grid{grid-template-columns:1fr 1fr;gap:32px}}
@@ -205,6 +179,11 @@ a{color:inherit;text-decoration:none}
 
 .toast{position:fixed;bottom:24px;left:50%;z-index:95;transform:translate(-50%,150%);background:var(--ink);color:var(--cream);padding:14px 26px;border-radius:999px;font-size:.85rem;font-weight:500;transition:transform .4s var(--ease);white-space:normal;text-align:center;max-width:calc(100vw - 32px);}
 .toast.is-on{transform:translate(-50%,0)}
+
+.wa-float {position: fixed;bottom: 24px;right: 20px;z-index: 85;width: 52px;height: 52px;border-radius: 50%;background: #25D366;display: grid;place-items: center;box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s;text-decoration: none;}
+.wa-float:hover {transform: scale(1.08);box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);}
+.wa-float svg {width: 26px;height: 26px;color: #fff;fill: #fff;}
+@media(max-width: 600px) {.wa-float {bottom: 20px;right: 16px;width: 48px;height: 48px;}.wa-float svg {width: 24px;height: 24px;}}
 </style>
 </head>
 <body>
@@ -216,11 +195,11 @@ a{color:inherit;text-decoration:none}
     </a>
     <nav class="nav">
       <a href="collection.html">Boutique</a>
-      <a href="index.html#custom">Votre message</a>
+      <a href="le-secret.html">Le Secret</a>
       <a href="faq.html">FAQ</a>
     </nav>
     <div class="header__actions">
-      <a href="index.html#custom" class="icon-btn" aria-label="Créer un message">
+      <a href="le-secret.html" class="icon-btn" aria-label="Créer un message">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
       </a>
     </div>
@@ -240,13 +219,9 @@ a{color:inherit;text-decoration:none}
       <div class="product-price" id="productPrice">0 DHS</div>
       <p class="lead" id="productDesc"></p>
 
-      <div class="custom-builder-card" id="customBuilderCard">
-        <span class="eyebrow">Personnalisation</span>
-        <h3>Écrivez votre message caché</h3>
-        <div class="custom__field">
-          <input id="customInputProduct" type="text" maxlength="32" placeholder="Ex: MON AMOUR" autocomplete="off" />
-        </div>
-        <div class="custom__helper" id="lineHelperProduct">Lettres et chiffres uniquement · Sans accents ni symboles · 32 max</div>
+      <!-- SCENT BLOCK (Added for premade candles) -->
+      <div class="scent-block">
+        <strong>Parfum signature.</strong> Fleur d'oranger & ambre boisé — le genre de parfum qui embaume la pièce et reste en mémoire.
       </div>
 
       <div class="custom-message-box" id="customMessageBox">
@@ -370,7 +345,7 @@ a{color:inherit;text-decoration:none}
         <h4>Boutique</h4>
         <ul>
           <li><a href="collection.html">Toutes les bougies</a></li>
-          <li><a href="index.html#custom">Votre message</a></li>
+          <li><a href="le-secret.html">Le Secret</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
@@ -404,9 +379,13 @@ a{color:inherit;text-decoration:none}
 
 <div class="toast" id="toast">Commande confirmée</div>
 
+<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
+
 <script>
 const PRODUCTS = {
-  'votre-message': { name: 'Votre Message', price: 300, desc: 'Écrivez ce que vous voulez. Nous le cachons dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
+  'le-secret': { name: 'Le Secret', price: 300, desc: 'Écrivez ce que vous voulez. Nous le cachons dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
   'you-are-my-soulmate': { name: 'You Are My Soulmate', price: 250, desc: 'Un mot d\'amour, caché dans la cire.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
   'happy-anniversary': { name: 'Happy Anniversary', price: 250, desc: 'Pour les années, et celles à venir.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794508870/happy_annvirersay.png' },
   'youre-my-twin-flame': { name: "You're My Twin Flame", price: 250, desc: 'Pour celle qui se sent comme chez soi.', img: 'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507541/youre_my_twin_flame.png' },
@@ -421,7 +400,6 @@ const PRODUCTS = {
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id') || 'you-are-my-soulmate';
-let customMessage = params.get('msg') || ''; 
 const product = PRODUCTS[productId];
 
 if (product) {
@@ -430,77 +408,13 @@ if (product) {
   document.getElementById('productTitle').textContent = product.name;
   document.getElementById('productBreadcrumb').textContent = product.name;
   document.getElementById('productPrice').textContent = product.price + ' DHS';
-  
-  if (productId === 'votre-message') {
-    document.getElementById('customBuilderCard').style.display = 'flex';
-    document.getElementById('customMessageBox').style.display = 'block';
-    document.getElementById('productDesc').textContent = 'Votre message personnalisé sera coulé au coeur de la bougie.';
-    
-    const customInput = document.getElementById('customInputProduct');
-    const lineHelper = document.getElementById('lineHelperProduct');
-    
-    if (customMessage) {
-      customInput.value = customMessage;
-      document.getElementById('customMessageText').textContent = '« ' + customMessage + ' »';
-    }
-    
-    customInput.addEventListener('input', (e) => {
-      let val = e.target.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().replace(/[^A-Z0-9 ]/g, '');
-      e.target.value = val;
-      
-      if (val.trim()) {
-        document.getElementById('customMessageText').textContent = '« ' + val + ' »';
-      } else {
-        document.getElementById('customMessageText').textContent = 'Écrivez ci-dessus...';
-      }
-      
-      const lines = packWords(val);
-      const used = lines.length;
-      if (used === 0) { lineHelper.textContent = 'Lettres et chiffres uniquement · Sans accents ni symboles · 32 max'; lineHelper.classList.remove('is-tight'); return; }
-      const lastLen = lines[used-1].length;
-      const emptyOnCur = 8 - lastLen;
-      const emptyLines = 4 - used;
-      const left = emptyOnCur + (emptyLines * 8);
-      if (left === 0) { lineHelper.textContent = 'La bougie est pleine.'; lineHelper.classList.add('is-tight'); }
-      else if (emptyLines === 0 && emptyOnCur <= 2) { lineHelper.textContent = `Plus que ${left} caractère${left>1?'s':''} sur la dernière ligne.`; lineHelper.classList.add('is-tight'); }
-      else lineHelper.textContent = `Encore ${left} caractères possibles.`;
-    });
-
-    customInput.addEventListener('keydown', (e) => {
-      if (e.key === ' ') return;
-      if (e.key.length === 1 && !/[a-zA-Z0-9]/.test(e.key)) e.preventDefault();
-    });
-    
-  } else {
-    document.getElementById('productDesc').textContent = product.desc;
-  }
+  document.getElementById('productDesc').textContent = product.desc;
   
   document.title = 'KLIMA — ' + product.name;
 
   if (typeof fbq === 'function') {
     fbq('track', 'ViewContent', { content_name: product.name, content_ids: [productId], content_type: 'product', value: product.price, currency: 'MAD' });
   }
-}
-
-function packWords(text) {
-  const normalized = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const clean = normalized.trim().toUpperCase().replace(/[^A-Z0-9 ]/g, '');
-  if (!clean) return [];
-  const words = clean.split(' ').filter(w => w.length > 0);
-  const packed = []; let cur = '';
-  words.forEach(word => {
-    if (word.length > 8) {
-      if (cur) { packed.push(cur); cur = ''; }
-      let t = word;
-      while (t.length > 0) { packed.push(t.slice(0,8)); t = t.slice(8); }
-      return;
-    }
-    const sp = cur.length > 0 ? 1 : 0;
-    if (cur.length + sp + word.length <= 8) cur += (sp ? ' ' : '') + word;
-    else { if (cur) packed.push(cur); cur = word; }
-  });
-  if (cur) packed.push(cur);
-  return packed;
 }
 
 let currentQty = 1;
@@ -540,15 +454,6 @@ function handleOrder(e) {
   data.quantity = currentQty;
   data.totalPrice = product.price * currentQty;
   data.isGift = isGift;
-  
-  if (productId === 'votre-message') {
-    const customInput = document.getElementById('customInputProduct');
-    if (!customInput.value.trim()) {
-      customInput.reportValidity();
-      return;
-    }
-    data.customMessage = customInput.value.trim();
-  }
 
   submitBtn.textContent = 'Envoi en cours…';
   submitBtn.disabled = true;
