@@ -292,7 +292,7 @@ a{color:inherit;text-decoration:none}
 <section class="section custom" id="custom">
   <div class="container custom__grid">
     <div class="custom__copy reveal">
-      <span class="eyebrow">Le Secret · 300 DHS</span>
+      <span class="eyebrow">Le Secret · 250 DHS</span>
       <h2 class="h-display h2">
         Écrivez les mots.<br>On les cache.
       </h2>
@@ -306,7 +306,7 @@ a{color:inherit;text-decoration:none}
         </div>
         <div class="custom__helper" id="lineHelper">Lettres et chiffres uniquement · 32 max</div>
         <button type="submit" class="btn btn--pink custom__submit btn--large">
-          Créer cette bougie · 300 DHS
+          Créer cette bougie · 250 DHS
         </button>
         <span class="custom__note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg>
@@ -410,17 +410,17 @@ a{color:inherit;text-decoration:none}
 
 <script>
 const PRODUCTS = [
-  { id:'le-secret', name:'Le Secret', price:300, desc:'Vos mots, cachés dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
-  { id:'you-are-my-soulmate', name:'You Are My Soulmate', price:250, desc:'Un mot d\'amour, caché dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
-  { id:'happy-anniversary', name:'Happy Anniversary', price:250, desc:'Pour les années, et celles à venir', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794508870/happy_annvirersay.png' },
-  { id:'youre-my-twin-flame', name:"You're My Twin Flame", price:250, desc:'Pour celle qui se sent comme chez soi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507541/youre_my_twin_flame.png' },
-  { id:'we-are-pregnant', name:'We Are Pregnant', price:250, desc:'La nouvelle, gardée secrète un peu plus longtemps', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507509/we_are_pregnant.png' },
-  { id:'youre-a-queen', name:"You're a Queen", price:250, desc:'Pour elle, parce qu\'elle l\'est', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507413/youre_a_queen.jpg' },
-  { id:'si-tu-sautes-je-saute', name:'Si Tu Sautes, Je Saute', price:250, desc:'Pour l\'ami qui saute avec toi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507374/si_tu_sautes_je_saute.jpg' },
-  { id:'je-brule-pour-toi', name:'Je Brûle Pour Toi', price:250, desc:'Un mot d\'amour à la française', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507373/je_brule_pour_toi.jpg' },
-  { id:'papa-de-lannee', name:"Papa de l'Année", price:250, desc:'Pour le papa qui l\'a mérité', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507299/papa_de_lanne.jpg' },
-  { id:'je-taime', name:"Je T'aime", price:250, desc:'La chose la plus simple, la plus belle', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507275/je_taime.jpg' },
-  { id:'i-love-you', name:'I Love You', price:250, desc:'Trois mots, cachés jusqu\'au bon moment', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507270/i_love_you.jpg' }
+  { id:'le-secret', name:'Le Secret', price:250, desc:'Vos mots, cachés dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507297/votre_message.jpg' },
+  { id:'you-are-my-soulmate', name:'You Are My Soulmate', price:200, desc:'Un mot d\'amour, caché dans la cire', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794509008/you_are_my_soulmate.jpg' },
+  { id:'happy-anniversary', name:'Happy Anniversary', price:200, desc:'Pour les années, et celles à venir', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794508870/happy_annvirersay.png' },
+  { id:'youre-my-twin-flame', name:"You're My Twin Flame", price:200, desc:'Pour celle qui se sent comme chez soi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507541/youre_my_twin_flame.png' },
+  { id:'we-are-pregnant', name:'We Are Pregnant', price:200, desc:'La nouvelle, gardée secrète un peu plus longtemps', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507509/we_are_pregnant.png' },
+  { id:'youre-a-queen', name:"You're a Queen", price:200, desc:'Pour elle, parce qu\'elle l\'est', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507413/youre_a_queen.jpg' },
+  { id:'si-tu-sautes-je-saute', name:'Si Tu Sautes, Je Saute', price:200, desc:'Pour l\'ami qui saute avec toi', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507374/si_tu_sautes_je_saute.jpg' },
+  { id:'je-brule-pour-toi', name:'Je Brûle Pour Toi', price:200, desc:'Un mot d\'amour à la française', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507373/je_brule_pour_toi.jpg' },
+  { id:'papa-de-lannee', name:"Papa de l'Année", price:200, desc:'Pour le papa qui l\'a mérité', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507299/papa_de_lanne.jpg' },
+  { id:'je-taime', name:"Je T'aime", price:200, desc:'La chose la plus simple, la plus belle', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507275/je_taime.jpg' },
+  { id:'i-love-you', name:'I Love You', price:200, desc:'Trois mots, cachés jusqu\'au bon moment', img:'https://res.cloudinary.com/bba7rzw5/image/upload/v1794507270/i_love_you.jpg' }
 ];
 
 const grid = document.getElementById('grid');
