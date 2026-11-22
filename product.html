@@ -24,8 +24,10 @@
   --display:'Fraunces', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);--max:1300px;--radius:12px;
 }
+
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.7;font-size:17px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;overflow-x:hidden;}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 img,svg{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -51,7 +53,7 @@ a{color:inherit;text-decoration:none}
 .btn--large{padding:20px 48px;font-size:1rem}
 
 .header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(252,248,245,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
-.header__inner{display:flex;justify-content:space-between;align-items:center;gap:16px;height:80px;}
+.header__inner{display:flex;justify-content:space-between;align-items:center;gap:16px;height:80px;max-width:1200px;margin-inline:auto;padding-inline:24px;}
 .logo{flex-shrink:0;}
 .logo img{height:32px;width:auto;}
 .nav{display:flex;gap:32px;flex-shrink:1;min-width:0;}
@@ -86,20 +88,34 @@ a{color:inherit;text-decoration:none}
 
 @media(max-width:900px){
   .product-image{position:relative;top:auto;max-width:100%;}
-  .product-image img{object-fit:contain;background:var(--pink-light);}
 }
 
-.product-info{display:flex;flex-direction:column;gap:24px;padding-top:8px;min-width:0;}
-.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.product-info{display:flex;flex-direction:column;gap:20px;min-width:0;}
+.breadcrumb{font-size:.75rem;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
 .breadcrumb a:hover{color:var(--pink);}
-.product-title{font-size:clamp(2rem,4vw,3rem);line-height:1.1;word-break:break-word;}
+.product-title{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;word-break:break-word;}
 .product-price{font-family:var(--display);font-size:1.5rem;color:var(--ink);font-weight:400;}
 
-.scent-block{
-  font-size:.9rem;color:var(--ink-soft);line-height:1.6;
-  padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;
+.micro-trust{
+  display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);
+  margin-top:-8px;
 }
-.scent-block strong{color:var(--ink);font-weight:600;}
+.micro-trust .stars{display:inline-flex;gap:2px;color:var(--pink);}
+.micro-trust .stars svg{width:12px;height:12px;}
+
+.scent-block {
+  font-size: .9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.scent-block strong {
+  color: var(--ink);
+  font-weight: 600;
+}
 
 .mechanism-box{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:16px;margin-top:8px;}
 .mechanism-box h4{font-family:var(--display);font-size:1.1rem;font-weight:400;}
@@ -157,7 +173,7 @@ a{color:inherit;text-decoration:none}
 .faq-item p{font-size:.9rem;color:var(--ink-soft);margin-top:12px;line-height:1.7;}
 
 .footer{background:var(--cream);padding-block:48px 32px;border-top:1px solid var(--line);margin-top:80px;}
-.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;max-width:1200px;margin-inline:auto;padding-inline:24px;}
 @media(max-width:900px){.footer__grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media(max-width:480px){.footer__grid{grid-template-columns:1fr}}
 .footer__logo{height:28px;width:auto;margin-bottom:20px}
@@ -169,7 +185,7 @@ a{color:inherit;text-decoration:none}
 .footer__social{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-soft);font-weight:500;transition:color .25s;}
 .footer__social:hover{color:var(--pink)}
 .footer__social svg{width:16px;height:16px}
-.footer__bottom{padding-top:32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);}
+.footer__bottom{padding-top:32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);max-width:1200px;margin-inline:auto;padding-inline:24px;}
 .footer__bottom a {color: var(--ink-soft);text-decoration: underline;margin-left: 12px;transition: color .2s;}
 .footer__bottom a:hover {color: var(--pink);}
 .footer__bottom-links {display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
@@ -186,7 +202,7 @@ a{color:inherit;text-decoration:none}
 <body>
 
 <header class="header">
-  <div class="container header__inner">
+  <div class="header__inner">
     <a href="index.html" class="logo" aria-label="KLIMA accueil">
       <img src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
     </a>
@@ -214,22 +230,29 @@ a{color:inherit;text-decoration:none}
       </div>
       <h1 class="h-display product-title" id="productTitle">Chargement…</h1>
       <div class="product-price" id="productPrice">0 DHS</div>
+      
+      <div class="micro-trust">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        </span>
+        <span>4.9/5 · 2,300+ révélations offertes</span>
+      </div>
+
       <p class="lead" id="productDesc"></p>
 
       <div class="scent-block">
         <strong>Parfum signature.</strong> Fleur d'oranger & ambre boisé — le genre de parfum qui embaume la pièce et reste en mémoire.
       </div>
 
-      <div class="custom-message-box" id="customMessageBox">
-        <span>Votre message caché</span>
-        <strong id="customMessageText">Écrivez ci-dessus...</strong>
-      </div>
-
       <div class="mechanism-box">
         <h4>Comment ça marche ?</h4>
         <p>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
-          Un message caché dans la cire, écrit avec des perles. Il apparaît lentement au fil de la combustion — environ 1h30 à 2h après la première flamme.
+          Un message caché dans la cire, écrit avec des perles. Il apparaît lentement au fil de la combustion — environ 30 minutes à 1 heure après la première flamme.
         </p>
         <p>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
@@ -296,30 +319,23 @@ a{color:inherit;text-decoration:none}
 
         <div class="payment-note" id="paymentNote">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg>
-          Paiement à la livraison. Livraison offerte.
+          Paiement à la livraison. Livraison offerte sous 2 à 3 jours.
         </div>
       </form>
-
-      <div class="trust-signals">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3z"/><path d="M16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>
-          Livraison offerte au Maroc
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 3 7 0 9-3-2-3-5 0-9z"/><path d="M7 13h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
-          Coulée à la main
-        </div>
-      </div>
 
       <div class="inline-faq">
         <h4>Questions fréquentes</h4>
         <details class="faq-item">
           <summary>Combien de temps pour voir le message ?</summary>
-          <p>Le message apparaît généralement après 1h30 à 2h de combustion. Nous recommandons de brûler la bougie 2 à 3 heures à la fois.</p>
+          <p>Le message commence à apparaître après 30 minutes à 1 heure de combustion.</p>
         </details>
         <details class="faq-item">
           <summary>Puis-je envoyer la bougie directement à quelqu'un ?</summary>
-          <p>Oui. Cochez la case "C'est un cadeau" dans le formulaire. Nous vous contacterons sur WhatsApp pour le paiement par virement (puisque le destinataire ne doit pas payer à la livraison).</p>
+          <p>Oui. Cochez "C'est un cadeau". Nous vous contacterons sur WhatsApp pour le paiement par virement.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quels sont les délais de livraison ?</summary>
+          <p>La livraison est offerte partout au Maroc sous 2 à 3 jours ouvrés. <strong>Vous préparez un événement spécial ?</strong> N'hésitez pas à nous faire part de votre occasion, et nous accélérerons le traitement de votre commande.</p>
         </details>
       </div>
     </div>
@@ -327,55 +343,53 @@ a{color:inherit;text-decoration:none}
 </main>
 
 <footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <img class="footer__logo" src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
-        <p class="footer__about">Bougies à message caché. Coulées à la main au Maroc, faites pour être offertes.</p>
-        <a href="https://instagram.com/klimabougies" class="footer__social" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>
-          @klimabougies
-        </a>
-      </div>
-      <div>
-        <h4>Boutique</h4>
-        <ul>
-          <li><a href="collection.html">Toutes les bougies</a></li>
-          <li><a href="le-secret.html">Le Secret</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Aide</h4>
-        <ul>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="mailto:contact@klimabougies.com">contact@klimabougies.com</a></li>
-          <li><a href="tel:+212688400044">06 88 40 00 44</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>KLIMA</h4>
-        <ul>
-          <li><a href="notre-histoire.html">Notre histoire</a></li>
-          <li><a href="https://wa.me/212688400088" target="_blank" rel="noopener">WhatsApp</a></li>
-        </ul>
-      </div>
+  <div class="footer__grid">
+    <div>
+      <img class="footer__logo" src="https://res.cloudinary.com/bba7rzw5/image/upload/v1794507733/logo_nobg_black.svg" alt="KLIMA" />
+      <p class="footer__about">Bougies à message caché. Coulées à la main au Maroc, faites pour être offertes.</p>
+      <a href="https://instagram.com/klimabougies" class="footer__social" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>
+        @klimabougies
+      </a>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__bottom-links">
-        <span>© 2026 KLIMA. Tous droits réservés.</span>
-        <a href="politique-de-confidentialite.html">Confidentialité</a>
-        <a href="conditions-generales.html">CGV</a>
-        <a href="politique-de-retour.html">Retours</a>
-      </div>
-      <span>Coulée à la main au Maroc.</span>
+    <div>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="collection.html">Toutes les bougies</a></li>
+        <li><a href="le-secret.html">Le Secret</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
     </div>
+    <div>
+      <h4>Aide</h4>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mailto:contact@klimabougies.com">contact@klimabougies.com</a></li>
+        <li><a href="tel:+212688400044">06 88 40 00 44</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>KLIMA</h4>
+      <ul>
+        <li><a href="notre-histoire.html">Notre histoire</a></li>
+        <li><a href="https://wa.me/212688400044" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__bottom-links">
+      <span>© 2026 KLIMA. Tous droits réservés.</span>
+      <a href="politique-de-confidentialite.html">Confidentialité</a>
+      <a href="conditions-generales.html">CGV</a>
+      <a href="politique-de-retour.html">Retours</a>
+    </div>
+    <span>Coulée à la main au Maroc.</span>
   </div>
 </footer>
 
 <div class="toast" id="toast">Commande confirmée</div>
 
-<a href="https://wa.me/212688400088?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
+<a href="https://wa.me/212688400044?text=Bonjour%20KLIMA%2C%20j%27ai%20une%20question." target="_blank" rel="noopener" class="wa-float" aria-label="Nous contacter sur WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.7.7 2.4.8 3.3.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 20.5 3.5zM12 20.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
 </a>
 
@@ -433,7 +447,7 @@ function toggleGift() {
     paymentNote.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg> Cadeau : nous vous contacterons sur WhatsApp pour le paiement par virement.`;
   } else {
     giftFields.classList.remove('is-visible');
-    paymentNote.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg> Paiement à la livraison. Livraison offerte.`;
+    paymentNote.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg> Paiement à la livraison. Livraison offerte sous 2 à 3 jours.`;
   }
 }
 
